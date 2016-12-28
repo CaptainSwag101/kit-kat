@@ -1,6 +1,6 @@
 ﻿namespace kitkat
 {
-    partial class CTRV
+    partial class kitkat
     {
         /// <summary>
         /// Required designer variable.
@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CTRV));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kitkat));
             this.DisconnectTimeout = new System.Windows.Forms.Timer(this.components);
             this.TabFixer = new System.Windows.Forms.Panel();
             this.Heartbeat = new System.Windows.Forms.Timer(this.components);
-            this.controlBox1 = new kitkat.ControlBox();
-            this.customLabel1 = new kitkat.CustomLabel();
-            this.customTabControl1 = new kitkat.CustomTabControl();
+            this.controlBox1 = new global::kitkat.ControlBox();
+            this.customLabel1 = new global::kitkat.CustomLabel();
+            this.customTabControl1 = new global::kitkat.CustomTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.logger = new kitkat.CustomLabel();
-            this.MemPatchButton = new kitkat.MaterialButton();
-            this.ConnectButton = new kitkat.MaterialButton();
+            this.logger = new global::kitkat.CustomLabel();
+            this.MemPatchButton = new global::kitkat.MaterialButton();
+            this.ConnectButton = new global::kitkat.MaterialButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.hnlogger = new System.Windows.Forms.RichTextBox();
             this.NetPass = new System.Windows.Forms.TextBox();
-            this.RestartHostedNetwork = new kitkat.MaterialButton();
-            this.separator4 = new kitkat.Separator();
+            this.RestartHostedNetwork = new global::kitkat.MaterialButton();
+            this.separator4 = new global::kitkat.Separator();
             this.NetSSID = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.customLabel2 = new kitkat.CustomLabel();
-            this.PushFileSelectButton = new kitkat.MaterialButton();
-            this.logger3 = new kitkat.CustomLabel();
-            this.PushButton = new kitkat.MaterialButton();
+            this.customLabel2 = new global::kitkat.CustomLabel();
+            this.PushFileSelectButton = new global::kitkat.MaterialButton();
+            this.logger3 = new global::kitkat.CustomLabel();
+            this.PushButton = new global::kitkat.MaterialButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.customLabel3 = new kitkat.CustomLabel();
-            this.irlog = new kitkat.CustomLabel();
+            this.customLabel3 = new global::kitkat.CustomLabel();
+            this.irlog = new global::kitkat.CustomLabel();
             this.pctSurface = new System.Windows.Forms.PictureBox();
             this.Hidden4 = new System.Windows.Forms.TabPage();
             this.Hidden5 = new System.Windows.Forms.TabPage();
@@ -65,11 +65,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.bScale = new System.Windows.Forms.TextBox();
             this.AutoConnect = new System.Windows.Forms.CheckBox();
-            this.separator3 = new kitkat.Separator();
-            this.BatchLinkButton = new kitkat.MaterialButton();
+            this.separator3 = new global::kitkat.Separator();
+            this.BatchLinkButton = new global::kitkat.MaterialButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.separator2 = new kitkat.Separator();
-            this.separator1 = new kitkat.Separator();
+            this.separator2 = new global::kitkat.Separator();
+            this.separator1 = new global::kitkat.Separator();
             this.ViewMode = new System.Windows.Forms.NumericUpDown();
             this.ipaddress = new System.Windows.Forms.TextBox();
             this.ScreenPriority = new System.Windows.Forms.NumericUpDown();

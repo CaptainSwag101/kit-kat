@@ -12,7 +12,7 @@ namespace kitkat
 
         public static NTR ntrClient;
         public static ScriptHelper scriptHelper;
-        public static CTRV mainform;
+        public static kitkat mainform;
 
         /// <summary>
         /// The main entry point for the application.
@@ -42,14 +42,14 @@ namespace kitkat
                     // Try fill in the Placeholder Strings;
                     try
                     {
-                        LatestVersion = wc.DownloadString("https://raw.githubusercontent.com/initPRAGMA/CTR-V/master/version.txt");
+                        LatestVersion = wc.DownloadString("https://raw.githubusercontent.com/initPRAGMA/kit-kat/master/version.txt");
                         ExecutableLocation = typeof(Program).Assembly.CodeBase.Replace("file:///", "");
                         CurrentVersion = FileVersionInfo.GetVersionInfo(ExecutableLocation).ProductVersion;
                         CurrentExecutableName = typeof(Program).Assembly.GetName().Name + "-" + LatestVersion + ".exe";
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Please re-download CTR-V manually as an Update Bug Occured! Error: " + ex.Message, "Update Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please re-download kit-kat manually as an Update Bug Occured! Error: " + ex.Message, "Update Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     
                     // If the Current version is not the same as the Latest Version on Github
@@ -58,7 +58,7 @@ namespace kitkat
                         try
                         {
                             // Download the latest version
-                            wc.DownloadFile("https://github.com/initPRAGMA/CTR-V/raw/master/CTR-V.exe", CurrentExecutableName);
+                            wc.DownloadFile("https://github.com/initPRAGMA/kit-kat/raw/master/kit-kat.exe", CurrentExecutableName);
                             // Show a MessageBox asking to open Explorer to the file;
                             DialogResult mb = MessageBox.Show("Continue usage on the new update. Open Explorer and go to the Directory containing the updated .exe located at: " + ExecutableLocation.Replace("CTR-V.EXE", CurrentExecutableName + " ?\""), "New Update Downloaded!", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                             if (mb == DialogResult.Yes)
@@ -69,7 +69,7 @@ namespace kitkat
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Please re-download CTR-V manually as an Update Bug Occured! Error: " + ex.Message, "Update Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Please re-download kit-kat manually as an Update Bug Occured! Error: " + ex.Message, "Update Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -117,7 +117,7 @@ namespace kitkat
                 //Start
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                mainform = new CTRV();
+                mainform = new kitkat();
                 Application.Run(mainform);
                 return true;
             }

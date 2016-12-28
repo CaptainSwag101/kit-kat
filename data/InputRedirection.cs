@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.IO;
 using System.Net;
+using System.Reflection;
 
 namespace InputRedirection
 {
@@ -84,8 +85,32 @@ namespace InputRedirection
             }
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Font = Content.Load<Texture2D>("Fonts\\NESFont");
-            Cursor = Content.Load<Texture2D>("Cursors\\Cursor");
+
+            #region Font
+            byte[] fontbyte;
+            using (var stream = new MemoryStream())
+            {
+                kitkat.Properties.Resources.Font.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                fontbyte = stream.ToArray();
+            }
+            using (Stream strm = new MemoryStream(fontbyte))
+            {
+                Font = Texture2D.FromStream(GraphicsDevice, strm);
+            }
+            #endregion
+            #region Cursor
+            byte[] cursorbyte;
+            using (var stream = new MemoryStream())
+            {
+                kitkat.Properties.Resources.Cursor.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                cursorbyte = stream.ToArray();
+            }
+            using (Stream strm = new MemoryStream(cursorbyte))
+            {
+                Cursor = Texture2D.FromStream(GraphicsDevice, strm);
+            }
+            #endregion
+
         }
 
         protected override void UnloadContent()
@@ -610,7 +635,7 @@ namespace InputRedirection
             newbuttons ^= 0xFFF;
 
             //Touch
-            if (kitkat.CTRV.isMouseDown == true)
+            if (kitkat.kitkat.isMouseDown == true)
             {
                 TouchInput(ref newtouch, ref touchclick, false);
             }
@@ -899,13 +924,13 @@ namespace InputRedirection
 
                 //int mousex = Mouse.GetState().Position.X;
                 //int mousey = Mouse.GetState().Position.Y;
-                int mousex = kitkat.CTRV.MX;
-                int mousey = kitkat.CTRV.MY;
+                int mousex = kitkat.kitkat.MX;
+                int mousey = kitkat.kitkat.MY;
                 if (oldtouch == 0x2000000)
                 {
                     if ((GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X == 0.0) && (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y == 0.0))
                     {
-                        if (kitkat.CTRV.IsUsingMouse)
+                        if (kitkat.kitkat.IsUsingMouse)
                         {
                             spriteBatch.Draw(Cursor, new Rectangle(mousex - 1, mousey - 1, 3, 3), Color.Red);
                         }
@@ -1096,8 +1121,8 @@ namespace InputRedirection
 
         private void TouchInput(ref uint value, ref uint mouseclick, bool cpad)
         {
-            int X = kitkat.CTRV.MX;
-            int Y = kitkat.CTRV.MY;
+            int X = kitkat.kitkat.MX;
+            int Y = kitkat.kitkat.MY;
 
             if (mouseclick == 0x00)
             {

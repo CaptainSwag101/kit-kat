@@ -36,7 +36,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>C:\Users\Shiny\Desktop\CTR-V\</OutputPath>
+    <OutputPath>C:\Users\Shiny\Desktop\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -159,6 +159,8 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="ILMergeOrder.txt" />
+    <None Include="Resources\Cursor.png" />
+    <None Include="Resources\Font.png" />
     <None Include="Resources\Controller.png" />
     <None Include="Resources\Upload.png" />
     <None Include="Resources\WiFi.png" />
@@ -172,6 +174,12 @@
     <Error Condition="!Exists('..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets'))" />
   </Target>
   <Import Project="..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.0.5\build\MSBuild.ILMerge.Task.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>del /f "C:\Users\Shiny\Desktop\kit-kat.exe.config"
+del /f "C:\Users\Shiny\Desktop\kit-kat.pdb"
+del /f "C:\Users\Shiny\Desktop\kit-kat.vshost.exe.config"
+del /f "C:\Users\Shiny\Desktop\kit-kat.vshost.exe.manifest"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

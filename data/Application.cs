@@ -16,10 +16,10 @@ using System.Windows.Forms;
 namespace kitkat
 {
     
-    public partial class CTRV : Form
+    public partial class kitkat : Form
     {
         
-        public CTRV()
+        public kitkat()
         {
             // Log handling
             delLog = new LogDelegate(log);
