@@ -404,7 +404,7 @@ namespace kitkat
             else
             {
                 IsUsingMouse = false;
-                irlog.Text = "send nudes";
+                irlog.Text = "send nudes to @DarkenedMatter ( ͡° ͜ʖ ͡°)";
             }
         }
 
