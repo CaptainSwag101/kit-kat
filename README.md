@@ -1,22 +1,19 @@
-# CTR-V
-NTR-Debugger aimed for 3DS Streaming.
+# kit-kat
+MEGA toolkit chain with many useful features like Streaming, Pushing files to the 3DS wirelessly, Input Redirection, HostedNetwork Automation, And many many more.
 
-Thanks to [Cell9](https://github.com/44670) for [NTRDebugger](https://github.com/44670/NTRClient)
-and [JakeHL](https://github.com/JakeHL) for [NitroStream](https://github.com/JakeHL/NitroStream)
-
+## Old Screenshot
 ![Screenshot](http://i.imgur.com/oGb3VcE.gif)
 
 # Download
-https://github.com/ImReallyShiny/CTR-V/releases/
+https://github.com/initPRAGMA/kit-kat/releases/latest
 
 # Dependencies
-NONE! At all! Just CTR-V.exe!
+NONE! At all! Just kit-kat.exe!
 
 # Usage
-- On your 3DS -> FBI -> Network Install -> Write down the IP Address, The port isnt needed.
-- Open CTR-V -> Click the Settings Icon -> Put the IP Address in the Top Box saying "3DS IP Address".
 - On your 3DS -> Boot NTR Selector -> Wait until its back to the Home menu.
-- On CTR-V -> Go back to the main tab -> Hit Connect -> Give it a few seconds and Voila!
+- On kit-kat -> Hit Connect -> Give it a few seconds and Voila!
+(It might take a few seconds for kit-kat to detect the 3DS IP Address).
 
 # License
 GPLV2
