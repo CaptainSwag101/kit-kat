@@ -469,57 +469,65 @@ namespace kit_kat
         private void PushButton_Click(object sender, EventArgs e)
         {
             
-            // Reset Logger
-            logger3.Text = "";
-
-            // Add Firewall Rule
-            ProcessStartInfo procStartInfo = new ProcessStartInfo("netsh", "/c advfirewall firewall add rule name=\"CTRVFILESERVER\" dir=in action=allow protocol=TCP localport=8080");
-            procStartInfo.UseShellExecute = false;
-            procStartInfo.CreateNoWindow = true;
-            Process.Start(procStartInfo);
-
-            PushButton.Enabled = false;
-            PushFileSelectButton.Enabled = false;
-
-            log("Pushing files...", "logger3");
-
-            ss = new SimpleHTTPServer(ActiveDir, 8080);
-
-            System.Threading.Thread.Sleep(100);
-
-            try
+            if(PushFiles != null)
             {
-                s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                s.Connect(Settings.Default.IPAddress, 5000);
-            }
-            catch (Exception)
+
+                // Reset Logger
+                logger3.Text = "";
+
+                // Add Firewall Rule
+                ProcessStartInfo procStartInfo = new ProcessStartInfo("netsh", "/c advfirewall firewall add rule name=\"CTRVFILESERVER\" dir=in action=allow protocol=TCP localport=8080");
+                procStartInfo.UseShellExecute = false;
+                procStartInfo.CreateNoWindow = true;
+                Process.Start(procStartInfo);
+
+                PushButton.Enabled = false;
+                PushFileSelectButton.Enabled = false;
+
+                log("Pushing files...", "logger3");
+
+                ss = new SimpleHTTPServer(ActiveDir, 8080);
+
+                System.Threading.Thread.Sleep(100);
+
+                try
+                {
+                    s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                    s.Connect(Settings.Default.IPAddress, 5000);
+                }
+                catch (Exception)
+                {
+                    log("Failed to Connect!\n- Make sure you have FBI 2.4.5 or higher and in 'Receive URLs over the network' menu,\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network.", "logger3");
+                    PushButton.Enabled = true;
+                    PushFileSelectButton.Enabled = true;
+                }
+
+                string bstring = "";
+                string localhost = "";
+
+                // Get LocalHost;
+                var host = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (var ip in host.AddressList) { if (ip.AddressFamily == AddressFamily.InterNetwork) { localhost = ip.ToString() + ":8080/"; } }
+
+                // Add each file to the Byte String
+                foreach (var CIA in PushFiles) { bstring += localhost + Path.GetFileName(CIA) + "\n"; }
+
+                // Encoding
+                byte[] Largo = BitConverter.GetBytes((uint)Encoding.ASCII.GetBytes(bstring).Length);
+                byte[] Adress = Encoding.ASCII.GetBytes(bstring);
+                Array.Reverse(Largo); //Endian fix
+                byte[] outputBytes = new byte[Largo.Length + Adress.Length];
+                Buffer.BlockCopy(Largo, 0, outputBytes, 0, Largo.Length);
+                Buffer.BlockCopy(Adress, 0, outputBytes, Largo.Length, Adress.Length);
+
+                // Send
+                s.Send(outputBytes);
+                s.BeginReceive(new byte[1], 0, 1, 0, new AsyncCallback(onPushed), null); //Call me back when the 3ds says something.
+
+            } else
             {
-                log("Failed to Connect!\n- Make sure you have FBI 2.4.5 or higher and in 'Receive URLs over the network' menu,\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network.", "logger3");
-                PushButton.Enabled = true;
-                PushFileSelectButton.Enabled = true;
+                MessageBox.Show("Please add some files to Queue using the + button before trying to push.");
             }
-
-            string bstring = "";
-            string localhost = "";
-
-            // Get LocalHost;
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList) { if (ip.AddressFamily == AddressFamily.InterNetwork) { localhost = ip.ToString() + ":8080/"; } }
-
-            // Add each file to the Byte String
-            foreach (var CIA in PushFiles) { bstring += localhost + Path.GetFileName(CIA) + "\n"; }
-
-            // Encoding
-            byte[] Largo = BitConverter.GetBytes((uint)Encoding.ASCII.GetBytes(bstring).Length);
-            byte[] Adress = Encoding.ASCII.GetBytes(bstring);
-            Array.Reverse(Largo); //Endian fix
-            byte[] outputBytes = new byte[Largo.Length + Adress.Length];
-            Buffer.BlockCopy(Largo, 0, outputBytes, 0, Largo.Length);
-            Buffer.BlockCopy(Adress, 0, outputBytes, Largo.Length, Adress.Length);
-
-            // Send
-            s.Send(outputBytes);
-            s.BeginReceive(new byte[1], 0, 1, 0, new AsyncCallback(onPushed), null); //Call me back when the 3ds says something.
 
         }
         #endregion
