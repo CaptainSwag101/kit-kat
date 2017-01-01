@@ -2,7 +2,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Specialized;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 
@@ -41,7 +44,6 @@ namespace InputRedirection
         uint OldButton;
         uint seconds = 0;
         bool useGamePad = true;
-        string version = "0";
 
         void graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
         {
@@ -74,14 +76,8 @@ namespace InputRedirection
 
         protected override void LoadContent()
         {
-            if (File.Exists("config.cfg"))
-            {
-                ReadConfig();
-            }
-            else
-            {
-                SaveConfig();
-            }
+
+            ReadConfig();
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -221,67 +217,72 @@ namespace InputRedirection
 
         private void ReadConfig()
         {
-            StreamReader sr = new StreamReader("config.cfg");
+            // IP Address
+            IPAddress = kit_kat.Properties.Settings.Default.IPAddress;
 
-            if (version == sr.ReadLine())
+            // Debug Mode
+            if (kit_kat.Properties.Settings.Default.IRDebug == true) { debug = true; IsMouseVisible = false; }
+
+            // Gamepad Mode
+            if (kit_kat.Properties.Settings.Default.IRGamepad == false) { useGamePad = false; }
+
+            // Keyboard Input
+            string[] IRKB = kit_kat.Properties.Settings.Default.IRKB.Split(',');
+            for (int i = 0; i < KeyboardInput.Length; i++)
             {
-                IPAddress = sr.ReadLine();
-                if (sr.ReadLine() == "True")
-                {
-                    debug = true;
-                    this.IsMouseVisible = false;
-                }
-
-                if (sr.ReadLine() == "False")
-                {
-                    useGamePad = false;
-                }
-
-                for (int i = 0; i < KeyboardInput.Length; i++)
-                {
-                    KeyboardInput[i] = (Keys)Enum.Parse(typeof(Keys), sr.ReadLine());
-                }
-
-                for (int i = 0; i < GamePadInput.Length; i++)
-                {
-                    GamePadInput[i] = Convert.ToUInt32(sr.ReadLine());
-                }
-                sr.Close();
+                KeyboardInput[i] = (Keys)Enum.Parse(typeof(Keys), IRKB[i]);
             }
-            else
+
+            // Gamepad Input
+            string[] IRGP = kit_kat.Properties.Settings.Default.IRGP.Split(',');
+            for (int i = 0; i < IRGP.Length; i++)
             {
-                sr.Close();
-                SaveConfig();
+                GamePadInput[i] = Convert.ToUInt32(IRGP[i]);
             }
         }
 
         private void SaveConfig()
         {
-            StreamWriter sw = new StreamWriter("config.cfg");
 
-            sw.WriteLine(version);
-            sw.WriteLine(IPAddress);
-            sw.WriteLine(debug);
-            sw.WriteLine(useGamePad);
-
-            for (int i = 0; i < KeyboardInput.Length; i++)
-            {
-                sw.WriteLine(KeyboardInput[i]);
+            string KB = "";
+            for (int i = 0; i < KeyboardInput.Length; i++) {
+                KB += KeyboardInput[i].ToString();
+                if (i != (KeyboardInput.Length - 1)) { KB += ","; }
             }
+            System.Windows.Forms.MessageBox.Show(KB.ToString());
+            kit_kat.Properties.Settings.Default["IRKB"] = KB;
+            kit_kat.Properties.Settings.Default.Save();
 
-            for (int i = 0; i < GamePadInput.Length; i++)
-            {
-                sw.WriteLine(GamePadInput[i]);
+            string GP = "";
+            for (int i = 0; i < GamePadInput.Length; i++) {
+                GP += GamePadInput[i].ToString();
+                if (i != (GamePadInput.Length - 1)) { GP += ","; }
             }
-            sw.Close();
+            kit_kat.Properties.Settings.Default["IRGP"] = GP;
+            kit_kat.Properties.Settings.Default.Save();
+
         }
 
         private void CheckConnection()
         {
             if (!Program.ntrClient.isConnected)
             {
-                Program.ntrClient.setServer(IPAddress, 8000);
-                Program.ntrClient.connectToServer(false);
+                if(IPAddress != "3DS IP Address")
+                {
+                    try
+                    {
+                        Program.ntrClient.setServer(IPAddress, 8000);
+                        Program.ntrClient.connectToServer(false);
+                        log("", "logger3", "Successfully connected...");
+                    }
+                    catch (Exception)
+                    {
+                        log("", "logger3", "Failed to connect!");
+                    }
+                } else
+                {
+                    log("", "logger3", "Failed to connect!");
+                }
             }
         }
 
@@ -646,7 +647,7 @@ namespace InputRedirection
                     if (GamePad.GetState(PlayerIndex.One).Buttons.RightStick == ButtonState.Pressed)
                     {
                         newtouch = (uint)Math.Round(2047.5 + (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.X * 2047.5));
-                        newtouch += (uint)Math.Round(2047.5 + (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y * 2047.5)) << 0x0C;
+                        newtouch += (uint)Math.Round((2047.5 + (GamePad.GetState(PlayerIndex.One).ThumbSticks.Right.Y * 2047.5)) + 4095) << 0x0C;
                         newtouch += 0x1000000;
                     }
                     else
@@ -669,7 +670,7 @@ namespace InputRedirection
             {
                 cpadclick = 0x00;
                 newcpad = (uint)Math.Round(2047.5 + (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X * 2047.5));
-                newcpad += (uint)Math.Round(4095 - (2047.5 + (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y * 2047.5))) << 0x0C;
+                newcpad += (uint)Math.Round(2047.5 + (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y * 2047.5)) << 0x0C;
 
                 if (newcpad == 0x800800)
                 {
@@ -1182,6 +1183,24 @@ namespace InputRedirection
                 {
                     Program.ntrClient.sendWriteMemPacket(0x10DF20, (uint)0x10, data);
                 }
+            }
+        }
+
+        public delegate void logHandler(string msg, string c);
+        public event logHandler onLogArrival;
+        public void log(string msg, string c = "logger", string s = "")
+        {
+            if (onLogArrival != null)
+            {
+                onLogArrival.Invoke(msg, c);
+            }
+            try
+            {
+                Program.mainform.BeginInvoke(Program.mainform.delLog, msg, c, s);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
     }

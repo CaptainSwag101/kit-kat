@@ -36,31 +36,43 @@
             this.IPDetecter = new System.Windows.Forms.Timer(this.components);
             this.controlBox1 = new kit_kat.ControlBox();
             this.customLabel1 = new kit_kat.CustomLabel();
-            this.customTabControl1 = new kit_kat.CustomTabControl();
+            this.customTabControl1 = new kit_kat.cTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.customLabel7 = new kit_kat.CustomLabel();
             this.logger = new kit_kat.CustomLabel();
+            this.status1panel = new System.Windows.Forms.Panel();
+            this.status1 = new kit_kat.CustomLabel();
+            this.separator5 = new kit_kat.Separator();
             this.MemPatchButton = new kit_kat.MaterialButton();
             this.ConnectButton = new kit_kat.MaterialButton();
+            this.materialButton1 = new kit_kat.MaterialButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.hnlogger = new System.Windows.Forms.RichTextBox();
-            this.NetPass = new System.Windows.Forms.TextBox();
-            this.RestartHostedNetwork = new kit_kat.MaterialButton();
-            this.separator4 = new kit_kat.Separator();
-            this.NetSSID = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.customLabel2 = new kit_kat.CustomLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.customLabel6 = new kit_kat.CustomLabel();
+            this.logger2 = new kit_kat.CustomLabel();
             this.PushFileSelectButton = new kit_kat.MaterialButton();
-            this.logger3 = new kit_kat.CustomLabel();
+            this.status2panel = new System.Windows.Forms.Panel();
+            this.status2 = new kit_kat.CustomLabel();
+            this.separator1 = new kit_kat.Separator();
             this.PushButton = new kit_kat.MaterialButton();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.irlog = new kit_kat.CustomLabel();
-            this.customLabel5 = new kit_kat.CustomLabel();
-            this.customLabel4 = new kit_kat.CustomLabel();
+            this.materialButton2 = new kit_kat.MaterialButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.customLabel3 = new kit_kat.CustomLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.customLabel5 = new kit_kat.CustomLabel();
             this.pctSurface = new System.Windows.Forms.PictureBox();
+            this.customLabel8 = new kit_kat.CustomLabel();
+            this.customLabel4 = new kit_kat.CustomLabel();
+            this.status3panel = new System.Windows.Forms.Panel();
+            this.status3 = new kit_kat.CustomLabel();
+            this.separator4 = new kit_kat.Separator();
+            this.materialButton5 = new kit_kat.MaterialButton();
             this.Hidden4 = new System.Windows.Forms.TabPage();
             this.Hidden5 = new System.Windows.Forms.TabPage();
             this.Hidden6 = new System.Windows.Forms.TabPage();
+            this.Hidden7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.ShowConsole = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +84,6 @@
             this.BatchLinkButton = new kit_kat.MaterialButton();
             this.label8 = new System.Windows.Forms.Label();
             this.separator2 = new kit_kat.Separator();
-            this.separator1 = new kit_kat.Separator();
             this.ViewMode = new System.Windows.Forms.NumericUpDown();
             this.ipaddress = new System.Windows.Forms.TextBox();
             this.ScreenPriority = new System.Windows.Forms.NumericUpDown();
@@ -88,10 +99,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.customTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.status1panel.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.status2panel.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
+            this.status3panel.SuspendLayout();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScreenPriority)).BeginInit();
@@ -142,6 +158,7 @@
             this.customLabel1.Size = new System.Drawing.Size(54, 29);
             this.customLabel1.TabIndex = 22;
             this.customLabel1.Text = "kit-kat";
+            this.customLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // customTabControl1
             // 
@@ -149,10 +166,10 @@
             this.customTabControl1.Controls.Add(this.tabPage1);
             this.customTabControl1.Controls.Add(this.tabPage2);
             this.customTabControl1.Controls.Add(this.tabPage3);
-            this.customTabControl1.Controls.Add(this.tabPage4);
             this.customTabControl1.Controls.Add(this.Hidden4);
             this.customTabControl1.Controls.Add(this.Hidden5);
             this.customTabControl1.Controls.Add(this.Hidden6);
+            this.customTabControl1.Controls.Add(this.Hidden7);
             this.customTabControl1.Controls.Add(this.tabPage8);
             this.customTabControl1.ItemSize = new System.Drawing.Size(36, 38);
             this.customTabControl1.Location = new System.Drawing.Point(-2, 27);
@@ -168,10 +185,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.tabPage1.Controls.Add(this.logger);
-            this.tabPage1.Controls.Add(this.MemPatchButton);
-            this.tabPage1.Controls.Add(this.ConnectButton);
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tabPage1.Location = new System.Drawing.Point(38, 2);
@@ -181,14 +196,69 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.customLabel7);
+            this.panel1.Controls.Add(this.logger);
+            this.panel1.Controls.Add(this.status1panel);
+            this.panel1.Controls.Add(this.separator5);
+            this.panel1.Controls.Add(this.MemPatchButton);
+            this.panel1.Controls.Add(this.ConnectButton);
+            this.panel1.Controls.Add(this.materialButton1);
+            this.panel1.Location = new System.Drawing.Point(0, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(654, 253);
+            this.panel1.TabIndex = 7;
+            // 
+            // customLabel7
+            // 
+            this.customLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel7.ForeColor = System.Drawing.Color.Black;
+            this.customLabel7.Location = new System.Drawing.Point(6, 6);
+            this.customLabel7.Name = "customLabel7";
+            this.customLabel7.Size = new System.Drawing.Size(151, 31);
+            this.customLabel7.TabIndex = 23;
+            this.customLabel7.Tag = "Left";
+            this.customLabel7.Text = "Capture Card\r\nStream your 3DS to PC";
+            this.customLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // logger
             // 
             this.logger.ForeColor = System.Drawing.Color.Black;
-            this.logger.Location = new System.Drawing.Point(0, 41);
+            this.logger.Location = new System.Drawing.Point(0, 46);
             this.logger.Name = "logger";
-            this.logger.Size = new System.Drawing.Size(654, 247);
+            this.logger.Size = new System.Drawing.Size(654, 181);
             this.logger.TabIndex = 6;
             this.logger.Text = "Loading IP Address...";
+            // 
+            // status1panel
+            // 
+            this.status1panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.status1panel.Controls.Add(this.status1);
+            this.status1panel.Location = new System.Drawing.Point(0, 227);
+            this.status1panel.Name = "status1panel";
+            this.status1panel.Size = new System.Drawing.Size(654, 26);
+            this.status1panel.TabIndex = 7;
+            // 
+            // status1
+            // 
+            this.status1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.status1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.status1.ForeColor = System.Drawing.Color.White;
+            this.status1.Location = new System.Drawing.Point(20, 0);
+            this.status1.Name = "status1";
+            this.status1.Size = new System.Drawing.Size(614, 26);
+            this.status1.TabIndex = 23;
+            this.status1.Text = "Idle...";
+            // 
+            // separator5
+            // 
+            this.separator5.Location = new System.Drawing.Point(0, 43);
+            this.separator5.Name = "separator5";
+            this.separator5.Size = new System.Drawing.Size(654, 6);
+            this.separator5.TabIndex = 6;
+            this.separator5.Text = "separator5";
             // 
             // MemPatchButton
             // 
@@ -196,7 +266,7 @@
             this.MemPatchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MemPatchButton.Font = new System.Drawing.Font("Segoe UI Symbol", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MemPatchButton.ForeColor = System.Drawing.Color.Black;
-            this.MemPatchButton.Location = new System.Drawing.Point(377, 10);
+            this.MemPatchButton.Location = new System.Drawing.Point(377, 6);
             this.MemPatchButton.Margin = new System.Windows.Forms.Padding(0);
             this.MemPatchButton.Name = "MemPatchButton";
             this.MemPatchButton.Size = new System.Drawing.Size(31, 31);
@@ -212,7 +282,7 @@
             this.ConnectButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConnectButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConnectButton.ForeColor = System.Drawing.Color.White;
-            this.ConnectButton.Location = new System.Drawing.Point(246, 10);
+            this.ConnectButton.Location = new System.Drawing.Point(246, 6);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(131, 31);
             this.ConnectButton.TabIndex = 4;
@@ -220,93 +290,36 @@
             this.ConnectButton.UseVisualStyleBackColor = false;
             this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
             // 
+            // materialButton1
+            // 
+            this.materialButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.materialButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton1.Font = new System.Drawing.Font("Segoe UI Symbol", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton1.ForeColor = System.Drawing.Color.White;
+            this.materialButton1.Location = new System.Drawing.Point(617, 6);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(31, 31);
+            this.materialButton1.TabIndex = 8;
+            this.materialButton1.Tag = "";
+            this.materialButton1.Text = "?";
+            this.materialButton1.UseVisualStyleBackColor = false;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.tabPage2.Controls.Add(this.hnlogger);
-            this.tabPage2.Controls.Add(this.NetPass);
-            this.tabPage2.Controls.Add(this.RestartHostedNetwork);
-            this.tabPage2.Controls.Add(this.separator4);
-            this.tabPage2.Controls.Add(this.NetSSID);
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tabPage2.Controls.Add(this.customLabel2);
+            this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
             this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tabPage2.Location = new System.Drawing.Point(38, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(654, 291);
-            this.tabPage2.TabIndex = 1;
+            this.tabPage2.TabIndex = 2;
             this.tabPage2.Tag = "";
             this.tabPage2.Text = "tabPage2";
-            // 
-            // hnlogger
-            // 
-            this.hnlogger.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.hnlogger.Location = new System.Drawing.Point(2, 69);
-            this.hnlogger.Name = "hnlogger";
-            this.hnlogger.ReadOnly = true;
-            this.hnlogger.Size = new System.Drawing.Size(650, 217);
-            this.hnlogger.TabIndex = 25;
-            this.hnlogger.Text = "";
-            // 
-            // NetPass
-            // 
-            this.NetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.NetPass.Location = new System.Drawing.Point(328, 37);
-            this.NetPass.Name = "NetPass";
-            this.NetPass.Size = new System.Drawing.Size(324, 26);
-            this.NetPass.TabIndex = 24;
-            this.NetPass.Text = "Password (min. 8 char.)";
-            this.NetPass.TextChanged += new System.EventHandler(this.NetPass_TextChanged);
-            // 
-            // RestartHostedNetwork
-            // 
-            this.RestartHostedNetwork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.RestartHostedNetwork.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RestartHostedNetwork.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RestartHostedNetwork.ForeColor = System.Drawing.Color.White;
-            this.RestartHostedNetwork.Location = new System.Drawing.Point(2, 2);
-            this.RestartHostedNetwork.Name = "RestartHostedNetwork";
-            this.RestartHostedNetwork.Size = new System.Drawing.Size(650, 34);
-            this.RestartHostedNetwork.TabIndex = 22;
-            this.RestartHostedNetwork.Text = "RESTART HOSTEDNETWORK";
-            this.RestartHostedNetwork.UseVisualStyleBackColor = false;
-            this.RestartHostedNetwork.Click += new System.EventHandler(this.RestartHostedNetwork_Click);
-            // 
-            // separator4
-            // 
-            this.separator4.BackColor = System.Drawing.Color.Gainsboro;
-            this.separator4.Location = new System.Drawing.Point(6, 65);
-            this.separator4.Name = "separator4";
-            this.separator4.Size = new System.Drawing.Size(642, 2);
-            this.separator4.TabIndex = 20;
-            this.separator4.Text = "separator4";
-            // 
-            // NetSSID
-            // 
-            this.NetSSID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.NetSSID.Location = new System.Drawing.Point(2, 37);
-            this.NetSSID.Name = "NetSSID";
-            this.NetSSID.Size = new System.Drawing.Size(324, 26);
-            this.NetSSID.TabIndex = 19;
-            this.NetSSID.Text = "Name";
-            this.NetSSID.TextChanged += new System.EventHandler(this.NetSSID_TextChanged);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.tabPage3.Controls.Add(this.customLabel2);
-            this.tabPage3.Controls.Add(this.PushFileSelectButton);
-            this.tabPage3.Controls.Add(this.logger3);
-            this.tabPage3.Controls.Add(this.PushButton);
-            this.tabPage3.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
-            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPage3.Location = new System.Drawing.Point(38, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(654, 291);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Tag = "";
-            this.tabPage3.Text = "tabPage3";
             // 
             // customLabel2
             // 
@@ -318,38 +331,94 @@
             this.customLabel2.TabIndex = 12;
             this.customLabel2.Text = "credit: elementalcode";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.customLabel6);
+            this.panel2.Controls.Add(this.logger2);
+            this.panel2.Controls.Add(this.PushFileSelectButton);
+            this.panel2.Controls.Add(this.status2panel);
+            this.panel2.Controls.Add(this.separator1);
+            this.panel2.Controls.Add(this.PushButton);
+            this.panel2.Controls.Add(this.materialButton2);
+            this.panel2.Location = new System.Drawing.Point(0, 19);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(654, 253);
+            this.panel2.TabIndex = 13;
+            // 
+            // customLabel6
+            // 
+            this.customLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel6.ForeColor = System.Drawing.Color.Black;
+            this.customLabel6.Location = new System.Drawing.Point(6, 6);
+            this.customLabel6.Name = "customLabel6";
+            this.customLabel6.Size = new System.Drawing.Size(186, 31);
+            this.customLabel6.TabIndex = 23;
+            this.customLabel6.Tag = "Left";
+            this.customLabel6.Text = "Push\r\nWireless .cia and .tik installer";
+            this.customLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // logger2
+            // 
+            this.logger2.ForeColor = System.Drawing.Color.Black;
+            this.logger2.Location = new System.Drawing.Point(0, 46);
+            this.logger2.Name = "logger2";
+            this.logger2.Size = new System.Drawing.Size(654, 181);
+            this.logger2.TabIndex = 9;
+            this.logger2.Text = "Loading IP Address...";
+            // 
             // PushFileSelectButton
             // 
-            this.PushFileSelectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.PushFileSelectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(218)))), ((int)(((byte)(248)))));
             this.PushFileSelectButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PushFileSelectButton.Font = new System.Drawing.Font("Segoe UI Symbol", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PushFileSelectButton.ForeColor = System.Drawing.Color.White;
-            this.PushFileSelectButton.Location = new System.Drawing.Point(377, 10);
+            this.PushFileSelectButton.Location = new System.Drawing.Point(377, 6);
             this.PushFileSelectButton.Margin = new System.Windows.Forms.Padding(0);
             this.PushFileSelectButton.Name = "PushFileSelectButton";
             this.PushFileSelectButton.Size = new System.Drawing.Size(31, 31);
             this.PushFileSelectButton.TabIndex = 11;
-            this.PushFileSelectButton.Tag = "";
+            this.PushFileSelectButton.Tag = "BrightBlue";
             this.PushFileSelectButton.Text = "+";
             this.PushFileSelectButton.UseVisualStyleBackColor = false;
             this.PushFileSelectButton.Click += new System.EventHandler(this.PushFileSelectButton_Click);
             // 
-            // logger3
+            // status2panel
             // 
-            this.logger3.ForeColor = System.Drawing.Color.Black;
-            this.logger3.Location = new System.Drawing.Point(0, 41);
-            this.logger3.Name = "logger3";
-            this.logger3.Size = new System.Drawing.Size(654, 247);
-            this.logger3.TabIndex = 9;
-            this.logger3.Text = "Loading IP Address...";
+            this.status2panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.status2panel.Controls.Add(this.status2);
+            this.status2panel.Location = new System.Drawing.Point(0, 227);
+            this.status2panel.Name = "status2panel";
+            this.status2panel.Size = new System.Drawing.Size(654, 26);
+            this.status2panel.TabIndex = 7;
+            // 
+            // status2
+            // 
+            this.status2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.status2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.status2.ForeColor = System.Drawing.Color.White;
+            this.status2.Location = new System.Drawing.Point(20, 0);
+            this.status2.Name = "status2";
+            this.status2.Size = new System.Drawing.Size(614, 26);
+            this.status2.TabIndex = 23;
+            this.status2.Text = "Waiting for files to be queued...";
+            // 
+            // separator1
+            // 
+            this.separator1.Location = new System.Drawing.Point(0, 43);
+            this.separator1.Name = "separator1";
+            this.separator1.Size = new System.Drawing.Size(654, 6);
+            this.separator1.TabIndex = 6;
+            this.separator1.Text = "separator1";
             // 
             // PushButton
             // 
             this.PushButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.PushButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PushButton.Enabled = false;
             this.PushButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PushButton.ForeColor = System.Drawing.Color.White;
-            this.PushButton.Location = new System.Drawing.Point(246, 10);
+            this.PushButton.Location = new System.Drawing.Point(246, 6);
             this.PushButton.Name = "PushButton";
             this.PushButton.Size = new System.Drawing.Size(131, 31);
             this.PushButton.TabIndex = 7;
@@ -357,73 +426,78 @@
             this.PushButton.UseVisualStyleBackColor = false;
             this.PushButton.Click += new System.EventHandler(this.PushButton_Click);
             // 
-            // tabPage4
+            // materialButton2
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.tabPage4.Controls.Add(this.irlog);
-            this.tabPage4.Controls.Add(this.customLabel5);
-            this.tabPage4.Controls.Add(this.customLabel4);
-            this.tabPage4.Controls.Add(this.customLabel3);
-            this.tabPage4.Controls.Add(this.pctSurface);
-            this.tabPage4.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
-            this.tabPage4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPage4.Location = new System.Drawing.Point(38, 2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(654, 291);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Tag = "";
-            this.tabPage4.Text = "tabPage4";
+            this.materialButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.materialButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton2.Font = new System.Drawing.Font("Segoe UI Symbol", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton2.ForeColor = System.Drawing.Color.White;
+            this.materialButton2.Location = new System.Drawing.Point(617, 6);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.Size = new System.Drawing.Size(31, 31);
+            this.materialButton2.TabIndex = 8;
+            this.materialButton2.Tag = "";
+            this.materialButton2.Text = "?";
+            this.materialButton2.UseVisualStyleBackColor = false;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
-            // irlog
+            // tabPage3
             // 
-            this.irlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.irlog.ForeColor = System.Drawing.Color.Black;
-            this.irlog.Location = new System.Drawing.Point(0, 0);
-            this.irlog.Name = "irlog";
-            this.irlog.Size = new System.Drawing.Size(654, 32);
-            this.irlog.TabIndex = 23;
-            this.irlog.Text = "idle";
-            // 
-            // customLabel5
-            // 
-            this.customLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customLabel5.ForeColor = System.Drawing.Color.Black;
-            this.customLabel5.Location = new System.Drawing.Point(498, 0);
-            this.customLabel5.Margin = new System.Windows.Forms.Padding(0);
-            this.customLabel5.Name = "customLabel5";
-            this.customLabel5.Size = new System.Drawing.Size(145, 288);
-            this.customLabel5.TabIndex = 26;
-            this.customLabel5.Text = "Usage:\r\nF1 - IP Address\r\nF2 - Keyboard Controls\r\nF3 - Gamepad Controls\r\nF4 - Debu" +
-    "g Mode\r\n\r\nMake sure you enter the IP Address before trying to use touch.";
-            // 
-            // customLabel4
-            // 
-            this.customLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customLabel4.ForeColor = System.Drawing.Color.Black;
-            this.customLabel4.Location = new System.Drawing.Point(10, 0);
-            this.customLabel4.Margin = new System.Windows.Forms.Padding(0);
-            this.customLabel4.Name = "customLabel4";
-            this.customLabel4.Size = new System.Drawing.Size(149, 288);
-            this.customLabel4.TabIndex = 25;
-            this.customLabel4.Text = "Installation:\r\nClick here to download the Input Redirection CIA file and install " +
-    "it using FBI.";
-            this.customLabel4.Click += new System.EventHandler(this.customLabel4_Click);
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tabPage3.Controls.Add(this.customLabel3);
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage3.Location = new System.Drawing.Point(38, 2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(654, 291);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Tag = "";
+            this.tabPage3.Text = "tabPage3";
             // 
             // customLabel3
             // 
             this.customLabel3.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 7F);
             this.customLabel3.ForeColor = System.Drawing.Color.Black;
-            this.customLabel3.Location = new System.Drawing.Point(0, 274);
+            this.customLabel3.Location = new System.Drawing.Point(0, 277);
             this.customLabel3.Name = "customLabel3";
-            this.customLabel3.Size = new System.Drawing.Size(654, 13);
+            this.customLabel3.Size = new System.Drawing.Size(654, 14);
             this.customLabel3.TabIndex = 24;
             this.customLabel3.Text = "credit: kazo";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.customLabel5);
+            this.panel3.Controls.Add(this.pctSurface);
+            this.panel3.Controls.Add(this.customLabel8);
+            this.panel3.Controls.Add(this.customLabel4);
+            this.panel3.Controls.Add(this.status3panel);
+            this.panel3.Controls.Add(this.separator4);
+            this.panel3.Controls.Add(this.materialButton5);
+            this.panel3.Location = new System.Drawing.Point(0, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(654, 265);
+            this.panel3.TabIndex = 27;
+            // 
+            // customLabel5
+            // 
+            this.customLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel5.ForeColor = System.Drawing.Color.Black;
+            this.customLabel5.Location = new System.Drawing.Point(498, 45);
+            this.customLabel5.Margin = new System.Windows.Forms.Padding(0);
+            this.customLabel5.Name = "customLabel5";
+            this.customLabel5.Size = new System.Drawing.Size(145, 195);
+            this.customLabel5.TabIndex = 26;
+            this.customLabel5.Text = "Usage:\r\nF1 - IP Address\r\nF2 - Keyboard Controls\r\nF3 - Gamepad Controls\r\nF4 - Debu" +
+    "g Mode\r\n\r\nMake sure you enter the IP Address before trying to use touch.";
             // 
             // pctSurface
             // 
             this.pctSurface.BackColor = System.Drawing.Color.Gainsboro;
-            this.pctSurface.Location = new System.Drawing.Point(167, 32);
+            this.pctSurface.Location = new System.Drawing.Point(167, 0);
             this.pctSurface.Margin = new System.Windows.Forms.Padding(0);
             this.pctSurface.Name = "pctSurface";
             this.pctSurface.Size = new System.Drawing.Size(320, 240);
@@ -433,9 +507,78 @@
             this.pctSurface.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pctSurface_MouseMove);
             this.pctSurface.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pctSurface_MouseUp);
             // 
+            // customLabel8
+            // 
+            this.customLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel8.ForeColor = System.Drawing.Color.Black;
+            this.customLabel8.Location = new System.Drawing.Point(6, 7);
+            this.customLabel8.Name = "customLabel8";
+            this.customLabel8.Size = new System.Drawing.Size(158, 31);
+            this.customLabel8.TabIndex = 23;
+            this.customLabel8.Tag = "Left";
+            this.customLabel8.Text = "Input Redirecter\r\nGC for Smash on 3DS?";
+            this.customLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // customLabel4
+            // 
+            this.customLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel4.ForeColor = System.Drawing.Color.Black;
+            this.customLabel4.Location = new System.Drawing.Point(6, 45);
+            this.customLabel4.Margin = new System.Windows.Forms.Padding(0);
+            this.customLabel4.Name = "customLabel4";
+            this.customLabel4.Size = new System.Drawing.Size(154, 195);
+            this.customLabel4.TabIndex = 25;
+            this.customLabel4.Text = "Installation:\r\nClick here to download the Input Redirection CIA file and install " +
+    "it using FBI.";
+            this.customLabel4.Click += new System.EventHandler(this.customLabel4_Click);
+            // 
+            // status3panel
+            // 
+            this.status3panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.status3panel.Controls.Add(this.status3);
+            this.status3panel.Location = new System.Drawing.Point(0, 240);
+            this.status3panel.Name = "status3panel";
+            this.status3panel.Size = new System.Drawing.Size(654, 26);
+            this.status3panel.TabIndex = 7;
+            // 
+            // status3
+            // 
+            this.status3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.status3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.status3.ForeColor = System.Drawing.Color.White;
+            this.status3.Location = new System.Drawing.Point(20, 0);
+            this.status3.Name = "status3";
+            this.status3.Size = new System.Drawing.Size(614, 26);
+            this.status3.TabIndex = 23;
+            this.status3.Text = "Waiting for input...";
+            // 
+            // separator4
+            // 
+            this.separator4.Location = new System.Drawing.Point(0, 44);
+            this.separator4.Name = "separator4";
+            this.separator4.Size = new System.Drawing.Size(654, 6);
+            this.separator4.TabIndex = 6;
+            this.separator4.Text = "separator4";
+            // 
+            // materialButton5
+            // 
+            this.materialButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.materialButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialButton5.Font = new System.Drawing.Font("Segoe UI Symbol", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton5.ForeColor = System.Drawing.Color.White;
+            this.materialButton5.Location = new System.Drawing.Point(493, 7);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(0);
+            this.materialButton5.Name = "materialButton5";
+            this.materialButton5.Size = new System.Drawing.Size(154, 31);
+            this.materialButton5.TabIndex = 8;
+            this.materialButton5.Tag = "";
+            this.materialButton5.Text = "Tutorial";
+            this.materialButton5.UseVisualStyleBackColor = false;
+            this.materialButton5.Click += new System.EventHandler(this.materialButton5_Click);
+            // 
             // Hidden4
             // 
-            this.Hidden4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.Hidden4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
             this.Hidden4.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
             this.Hidden4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Hidden4.Location = new System.Drawing.Point(38, 2);
@@ -448,7 +591,7 @@
             // 
             // Hidden5
             // 
-            this.Hidden5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.Hidden5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
             this.Hidden5.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
             this.Hidden5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Hidden5.Location = new System.Drawing.Point(38, 2);
@@ -461,7 +604,7 @@
             // 
             // Hidden6
             // 
-            this.Hidden6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.Hidden6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
             this.Hidden6.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
             this.Hidden6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Hidden6.Location = new System.Drawing.Point(38, 2);
@@ -472,9 +615,21 @@
             this.Hidden6.Tag = "Hidden";
             this.Hidden6.Text = "tabPage7";
             // 
+            // Hidden7
+            // 
+            this.Hidden7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.Hidden7.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.Hidden7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Hidden7.Location = new System.Drawing.Point(38, 2);
+            this.Hidden7.Name = "Hidden7";
+            this.Hidden7.Size = new System.Drawing.Size(654, 291);
+            this.Hidden7.TabIndex = 8;
+            this.Hidden7.Tag = "Hidden";
+            this.Hidden7.Text = "Hidden7";
+            // 
             // tabPage8
             // 
-            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
             this.tabPage8.Controls.Add(this.ShowConsole);
             this.tabPage8.Controls.Add(this.label1);
             this.tabPage8.Controls.Add(this.tScale);
@@ -485,7 +640,6 @@
             this.tabPage8.Controls.Add(this.BatchLinkButton);
             this.tabPage8.Controls.Add(this.label8);
             this.tabPage8.Controls.Add(this.separator2);
-            this.tabPage8.Controls.Add(this.separator1);
             this.tabPage8.Controls.Add(this.ViewMode);
             this.tabPage8.Controls.Add(this.ipaddress);
             this.tabPage8.Controls.Add(this.ScreenPriority);
@@ -575,7 +729,7 @@
             this.separator3.BackColor = System.Drawing.Color.Gainsboro;
             this.separator3.Location = new System.Drawing.Point(6, 268);
             this.separator3.Name = "separator3";
-            this.separator3.Size = new System.Drawing.Size(642, 2);
+            this.separator3.Size = new System.Drawing.Size(642, 6);
             this.separator3.TabIndex = 20;
             this.separator3.Text = "separator3";
             // 
@@ -610,18 +764,9 @@
             this.separator2.BackColor = System.Drawing.Color.Gainsboro;
             this.separator2.Location = new System.Drawing.Point(6, 168);
             this.separator2.Name = "separator2";
-            this.separator2.Size = new System.Drawing.Size(642, 2);
+            this.separator2.Size = new System.Drawing.Size(642, 6);
             this.separator2.TabIndex = 19;
             this.separator2.Text = "separator2";
-            // 
-            // separator1
-            // 
-            this.separator1.BackColor = System.Drawing.Color.Gainsboro;
-            this.separator1.Location = new System.Drawing.Point(6, 39);
-            this.separator1.Name = "separator1";
-            this.separator1.Size = new System.Drawing.Size(642, 2);
-            this.separator1.TabIndex = 18;
-            this.separator1.Text = "separator1";
             // 
             // ViewMode
             // 
@@ -644,10 +789,11 @@
             // 
             // ipaddress
             // 
+            this.ipaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ipaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ipaddress.Location = new System.Drawing.Point(6, 6);
+            this.ipaddress.Location = new System.Drawing.Point(6, 12);
             this.ipaddress.Name = "ipaddress";
-            this.ipaddress.Size = new System.Drawing.Size(499, 26);
+            this.ipaddress.Size = new System.Drawing.Size(499, 19);
             this.ipaddress.TabIndex = 3;
             this.ipaddress.Text = "3DS IP Address";
             this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
@@ -822,11 +968,15 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDrag);
             this.customTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.status1panel.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.status2panel.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).EndInit();
+            this.status3panel.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewMode)).EndInit();
@@ -853,26 +1003,20 @@
         private System.Windows.Forms.NumericUpDown Quality;
         private System.Windows.Forms.Label label7;
         private ControlBox controlBox1;
-        private CustomTabControl customTabControl1;
+        private cTabControl customTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel TabFixer;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage Hidden4;
         private System.Windows.Forms.TabPage Hidden5;
         private System.Windows.Forms.TabPage Hidden6;
         private System.Windows.Forms.TabPage tabPage8;
         private MaterialButton ConnectButton;
         private MaterialButton MemPatchButton;
-        private Separator separator1;
         private Separator separator2;
         public System.Windows.Forms.Label label8;
         private Separator separator3;
-        private Separator separator4;
-        private System.Windows.Forms.TextBox NetSSID;
-        private MaterialButton RestartHostedNetwork;
-        private System.Windows.Forms.TextBox NetPass;
         private MaterialButton BatchLinkButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox AutoConnect;
@@ -882,19 +1026,36 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox ShowConsole;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox hnlogger;
         private CustomLabel customLabel1;
         private CustomLabel logger;
-        private CustomLabel logger3;
+        private CustomLabel logger2;
         private MaterialButton PushButton;
         private MaterialButton PushFileSelectButton;
         private CustomLabel customLabel2;
         public System.Windows.Forms.PictureBox pctSurface;
-        private CustomLabel irlog;
         private CustomLabel customLabel3;
         private CustomLabel customLabel5;
         private CustomLabel customLabel4;
         private System.Windows.Forms.Timer IPDetecter;
+        private System.Windows.Forms.Panel panel1;
+        private Separator separator5;
+        private CustomLabel status1;
+        private System.Windows.Forms.Panel status1panel;
+        private MaterialButton materialButton1;
+        private CustomLabel customLabel7;
+        private System.Windows.Forms.TabPage Hidden7;
+        private System.Windows.Forms.Panel panel2;
+        private CustomLabel customLabel6;
+        private System.Windows.Forms.Panel status2panel;
+        private CustomLabel status2;
+        private Separator separator1;
+        private MaterialButton materialButton2;
+        private System.Windows.Forms.Panel panel3;
+        private CustomLabel customLabel8;
+        private System.Windows.Forms.Panel status3panel;
+        private CustomLabel status3;
+        private Separator separator4;
+        private MaterialButton materialButton5;
     }
 }
 

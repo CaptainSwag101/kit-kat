@@ -207,13 +207,7 @@ namespace kit_kat
             QOSValue.Value = Settings.Default.QOSValue;
             ScreenPriority.Value = Settings.Default.ScreenPriority;
             Quality.Value = Settings.Default.Quality;
-
-            NetSSID.Text = Settings.Default.NetSSID;
-            NetPass.Text = Settings.Default.NetPass;
             #endregion
-
-            // Re-Start the HostedNetwork
-            RestartNetwork();
 
             // If Auto-Connect is enabled
             if (Settings.Default.AutoConnect == true) { mempatch = false; connect(Settings.Default.IPAddress, 8000); Program.ntrClient.sendEmptyPacket(5); }
@@ -302,19 +296,7 @@ namespace kit_kat
             Settings.Default.Save();
             UpdateIP();
         }
-
-        private void NetSSID_TextChanged(object sender, EventArgs e)
-        {
-            Settings.Default["NetSSID"] = NetSSID.Text;
-            Settings.Default.Save();
-        }
-
-        private void NetPass_TextChanged(object sender, EventArgs e)
-        {
-            Settings.Default["NetPass"] = NetPass.Text;
-            Settings.Default.Save();
-        }
-
+        
         private void AutoConnect_CheckedChanged(object sender, EventArgs e)
         {
             if (AutoConnect.CheckState == CheckState.Checked)
@@ -350,10 +332,10 @@ namespace kit_kat
         }
         #endregion
         #region Log Handler
-        public delegate void LogDelegate(string l, string c = "logger");
+        public delegate void LogDelegate(string l, string c = "logger", string s = "");
         public LogDelegate delLog;
         public string lastlog;
-        public void log(string l, string c = "logger")
+        public void log(string l, string c = "logger", string s = "")
         {
             //lastlog = l;
             if (!l.Contains("\r\n"))
@@ -362,17 +344,41 @@ namespace kit_kat
                 l += "\r\n";
             Invoke(new MethodInvoker(() =>
             {
-                if (c == "logger")
+                if(l != "")
                 {
-                    logger.Text += l;
+                    if (c == "logger")
+                    {
+                        logger.Text = l;
+                    }
+                    else if (c == "logger2")
+                    {
+                        logger2.Text = l;
+                    }
                 }
-                else if (c == "logger3")
+
+                if (s != "")
                 {
-                    logger3.Text += l;
-                }
-                else if (c == "irlog")
-                {
-                    irlog.Text = l;
+                    if (c == "logger")
+                    {
+                        if (s.Contains("Failed")) { status1panel.BackColor = Settings.Default.AlertColor; }
+                        else if (s.Contains("Success")) { status1panel.BackColor = Color.LightGreen; }
+                        else { status1panel.BackColor = Color.FromArgb(90, 184, 255); }
+                        status1.Text = s;
+                    }
+                    else if (c == "logger2")
+                    {
+                        if (s.Contains("Failed")) { status2panel.BackColor = Settings.Default.AlertColor; }
+                        else if (s.Contains("Success")) { status2panel.BackColor = Color.LightGreen; }
+                        else { status2panel.BackColor = Color.FromArgb(90, 184, 255); }
+                        status2.Text = s;
+                    }
+                    else if (c == "logger3")
+                    {
+                        if (s.Contains("Failed")) { status3panel.BackColor = Settings.Default.AlertColor; }
+                        else if (s.Contains("Success")) { status3panel.BackColor = Color.LightGreen; }
+                        else { status3panel.BackColor = Color.FromArgb(90, 184, 255); }
+                        status3.Text = s;
+                    }
                 }
             }));
             return;
@@ -410,7 +416,7 @@ namespace kit_kat
             else
             {
                 IsUsingMouse = false;
-                irlog.Text = "send nudes to @DarkenedMatter ( ͡° ͜ʖ ͡°)";
+                status3.Text = "send nudes to @DarkenedMatter ( ͡° ͜ʖ ͡°)";
             }
         }
         
@@ -429,6 +435,11 @@ namespace kit_kat
                 Settings.Default.IPAddress = NetUtil.IPv4.GetFirst3DS().ToString();
                 Settings.Default.Save();
                 ipaddress.Text = Settings.Default.IPAddress;
+            }
+            if (ValidateIP(Settings.Default.IPAddress) == true)
+            {
+                IPDetecter.Stop();
+                IPDetecter.Enabled = false;
             }
             UpdateIP();
         }
@@ -452,19 +463,6 @@ namespace kit_kat
             }
         }
         #endregion
-        #region RestartHostedNetworkButton
-        private void RestartHostedNetwork_Click(object sender, EventArgs e)
-        {
-            if (NetPass.Text.Length < 8)
-            {
-                MessageBox.Show("The Password '" + NetPass.Text + "' is less than 8 characters! Please correct it to continue.");
-            }
-            else
-            {
-                RestartNetwork();
-            }
-        }
-        #endregion
         #region PushButton
         private void PushButton_Click(object sender, EventArgs e)
         {
@@ -473,7 +471,7 @@ namespace kit_kat
             {
 
                 // Reset Logger
-                logger3.Text = "";
+                logger2.Text = "";
 
                 // Add Firewall Rule
                 ProcessStartInfo procStartInfo = new ProcessStartInfo("netsh", "/c advfirewall firewall add rule name=\"CTRVFILESERVER\" dir=in action=allow protocol=TCP localport=8080");
@@ -484,7 +482,7 @@ namespace kit_kat
                 PushButton.Enabled = false;
                 PushFileSelectButton.Enabled = false;
 
-                log("Pushing files...", "logger3");
+                log("Pushing files...", "logger2");
 
                 ss = new SimpleHTTPServer(ActiveDir, 8080);
 
@@ -497,7 +495,7 @@ namespace kit_kat
                 }
                 catch (Exception)
                 {
-                    log("Failed to Connect!\n- Make sure you have FBI 2.4.5 or higher and in 'Receive URLs over the network' menu,\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network.", "logger3");
+                    log("Failed to Connect!\n- Make sure you have FBI 2.4.5 or higher and in 'Receive URLs over the network' menu,\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network.", "logger2");
                     PushButton.Enabled = true;
                     PushFileSelectButton.Enabled = true;
                 }
@@ -545,16 +543,17 @@ namespace kit_kat
                 {
                     PushFiles = ofd.FileNames;
                     ActiveDir = Path.GetDirectoryName(PushFiles[0]);
-                    logger3.Text = "";
+                    logger2.Text = "";
                     foreach (string file in PushFiles)
                     {
                         if (ActiveDir == Path.GetDirectoryName(file))
                         {
-                            log("Added '" + Path.GetFileName(file) + "' to Queue", "logger3");
+                            log("Added '" + Path.GetFileName(file) + "' to Queue", "logger2", "Ready to push...");
+                            PushButton.Enabled = true;
                         }
                         else
                         {
-                            MessageBox.Show("Somehow you managed to pick 2 files that are in different folders." + Environment.NewLine + "Multi-File booping would need the entire computer hosted to the network and that doesn't feel safe in my book." + Environment.NewLine + "Maybe in the future I'll find a way to do this.", "Woah there...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Somehow you managed to pick 2 files that are in different folders." + Environment.NewLine + "Multi-File pushing would need the entire computer hosted to the network and that doesn't feel safe in my book." + Environment.NewLine + "Maybe in the future I'll find a way to do this.", "Woah there...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
@@ -589,7 +588,7 @@ namespace kit_kat
         private void customTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // If it's the InputRedirecter Tab
-            if (customTabControl1.SelectedIndex == 3 && irstatus == false)
+            if (customTabControl1.SelectedIndex == 2 && irstatus == false)
             {
                 // Start InputRedirecter
                 InputRedirection.Game1 game = new InputRedirection.Game1(getDrawSurface());
@@ -598,6 +597,13 @@ namespace kit_kat
                 irstatus = true;
             }
         }
+        #endregion
+        #region Tutorial Buttons
+        private void materialButton1_Click(object sender, EventArgs e) { Process.Start("https://www.youtube.com/watch?v=VYJcxlGz02w"); }
+
+        private void materialButton2_Click(object sender, EventArgs e) { Process.Start("https://www.youtube.com/watch?v=PFaac9DmPQo"); }
+
+        private void materialButton5_Click(object sender, EventArgs e) { Process.Start("https://gbatemp.net/threads/how-to-use-input-redirection-on-kit-kat.455233"); }
         #endregion
 
         // Functions
@@ -626,7 +632,7 @@ namespace kit_kat
         {
             if (ValidateIP(host) == true)
             {
-                logger.Text = "";
+                log("", "logger", "Trying to connect...");
 
                 // Shut down NTRViewer
                 if (closeNTR == true) { foreach (Process p in Process.GetProcessesByName("NTRViewer")) { p.Kill(); p.WaitForExit(); } }
@@ -635,30 +641,6 @@ namespace kit_kat
                 Program.ntrClient.setServer(host, port);
                 Program.ntrClient.connectToServer();
             }
-            else
-            {
-                log("IP Address is invalid.", "logger");
-            }
-        }
-        #endregion
-        #region RestartNetwork
-        private void RestartNetwork()
-        {
-            hnlogger.Text = "";
-            var proc = new Process
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "cmd.exe",
-                    Arguments = "/c netsh wlan stop hostednetwork && netsh wlan set hostednetwork mode=allow ssid=" + NetSSID.Text + " key=" + NetPass.Text + " && netsh wlan start hostednetwork && netsh wlan show hostednetwork",
-                    UseShellExecute = false,
-                    RedirectStandardInput = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true
-                }
-            };
-            proc.Start();
-            hnlogger.Text = proc.StandardOutput.ReadToEnd();
         }
         #endregion
         #region onConnect
@@ -746,10 +728,9 @@ namespace kit_kat
                 if (ValidateIP(Settings.Default.IPAddress) != false)
                 {
                     ConnectButton.Enabled = true;
-                    PushButton.Enabled = true;
                     PushFileSelectButton.Enabled = true;
                     logger.Text = "Ready to connect to '" + Settings.Default.IPAddress + "'";
-                    logger3.Text = "Ready to connect to '" + Settings.Default.IPAddress + "'";
+                    logger2.Text = "Ready to connect to '" + Settings.Default.IPAddress + "'";
                 }
                 else
                 {
@@ -757,7 +738,7 @@ namespace kit_kat
                     PushButton.Enabled = false;
                     PushFileSelectButton.Enabled = false;
                     logger.Text = "The IP '" + Settings.Default.IPAddress + "' is not valid.";
-                    logger3.Text = "The IP '" + Settings.Default.IPAddress + "' is not valid.";
+                    logger2.Text = "The IP '" + Settings.Default.IPAddress + "' is not valid.";
                 }
             }
             else
@@ -766,7 +747,7 @@ namespace kit_kat
                 PushButton.Enabled = false;
                 PushFileSelectButton.Enabled = false;
                 logger.Text = "3DS IP is not configured.";
-                logger3.Text = "3DS IP is not configured.";
+                logger2.Text = "3DS IP is not configured.";
             }
         }
         #endregion

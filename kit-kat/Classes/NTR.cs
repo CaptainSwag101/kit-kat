@@ -260,10 +260,10 @@ namespace ntrbase
             {
                 if(Stream == true)
                 {
-                    log("Failed to Connect!\n- Make sure your using Boot NTR Selector and loading 3.4\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network,\n- 3DS might not ACTUALLY be connected to the Internet\n(Some games disable Wi-Fi when you are in it to allow NFC - Pokemon, Zelda e.t.c).");
+                    log("Make sure your using Boot NTR Selector and loading 3.4\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network,\n- 3DS might not ACTUALLY be connected to the Internet\n(Some games disable Wi-Fi when you are in it to allow NFC - Pokemon, Zelda e.t.c).", "logger", "Failed to connect!");
                 } else
                 {
-                    log("Failed to Connect!\n- Make sure you opened the Input Redirection CIA BEFORE Boot NTR Selector.", "irlog");
+                    log("Make sure you opened the Input Redirection CIA BEFORE Boot NTR Selector.", "irlog");
                 }
             }
             else
@@ -442,7 +442,7 @@ namespace ntrbase
 
         public delegate void logHandler(string msg, string c);
         public event logHandler onLogArrival;
-        public void log(string msg, string c = "logger")
+        public void log(string msg, string c = "logger", string s = "")
         {
             if (onLogArrival != null)
             {
@@ -450,7 +450,7 @@ namespace ntrbase
             }
             try
             {
-                Program.mainform.BeginInvoke(Program.mainform.delLog, msg, c);
+                Program.mainform.BeginInvoke(Program.mainform.delLog, msg, c, s);
             }
             catch (Exception ex)
             {

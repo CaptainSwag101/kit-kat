@@ -41,12 +41,6 @@
     <Setting Name="DisabledColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">90, 90, 90</Value>
     </Setting>
-    <Setting Name="NetSSID" Type="System.String" Scope="User">
-      <Value Profile="(Default)">HostedNetwork SSID (Name)</Value>
-    </Setting>
-    <Setting Name="NetPass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">HostedNetwork Key (Password)</Value>
-    </Setting>
     <Setting Name="BatchFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -61,6 +55,18 @@
     </Setting>
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IRDebug" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IRGamepad" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IRKB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A,S,N,M,H,F,T,G,W,Q,Z,X,Right,Left,Up,Down</Value>
+    </Setting>
+    <Setting Name="IRGP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1,2,4,8,16,32,64,128,256,512,1024,2048</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -181,30 +181,6 @@ namespace kit_kat.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("HostedNetwork SSID (Name)")]
-        public string NetSSID {
-            get {
-                return ((string)(this["NetSSID"]));
-            }
-            set {
-                this["NetSSID"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("HostedNetwork Key (Password)")]
-        public string NetPass {
-            get {
-                return ((string)(this["NetPass"]));
-            }
-            set {
-                this["NetPass"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string BatchFile {
             get {
@@ -260,6 +236,54 @@ namespace kit_kat.Properties {
             }
             set {
                 this["UpgradeRequired"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IRDebug {
+            get {
+                return ((bool)(this["IRDebug"]));
+            }
+            set {
+                this["IRDebug"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IRGamepad {
+            get {
+                return ((bool)(this["IRGamepad"]));
+            }
+            set {
+                this["IRGamepad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("A,S,N,M,H,F,T,G,W,Q,Z,X,Right,Left,Up,Down")]
+        public string IRKB {
+            get {
+                return ((string)(this["IRKB"]));
+            }
+            set {
+                this["IRKB"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1,2,4,8,16,32,64,128,256,512,1024,2048")]
+        public string IRGP {
+            get {
+                return ((string)(this["IRGP"]));
+            }
+            set {
+                this["IRGP"] = value;
             }
         }
     }
