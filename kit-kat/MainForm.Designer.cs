@@ -516,7 +516,7 @@
             this.customLabel8.Size = new System.Drawing.Size(158, 31);
             this.customLabel8.TabIndex = 23;
             this.customLabel8.Tag = "Left";
-            this.customLabel8.Text = "Input Redirecter\r\nGC for Smash on 3DS?";
+            this.customLabel8.Text = "IR\r\n3DS Input Redirector";
             this.customLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // customLabel4

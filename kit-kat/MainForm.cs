@@ -1,4 +1,5 @@
 ﻿using kit_kat.Properties;
+using kit_kat.server;
 using ntrbase;
 using System;
 using System.Diagnostics;
@@ -6,7 +7,6 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -182,10 +182,10 @@ namespace kit_kat
         // Variables
         public bool mempatch = false;
         Socket s;
-        SimpleHTTPServer ss;
+        sHTTPServer ss;
         string[] PushFiles;
         string ActiveDir;
-
+        
         // OnLoad/OnClose & Handlers
         #region Onload
         private void Form1_Load(object sender, EventArgs e)
@@ -344,7 +344,7 @@ namespace kit_kat
                 l += "\r\n";
             Invoke(new MethodInvoker(() =>
             {
-                if(l != "")
+                if(l != "" && !l.Contains("false"))
                 {
                     if (c == "logger")
                     {
@@ -467,64 +467,63 @@ namespace kit_kat
         private void PushButton_Click(object sender, EventArgs e)
         {
             
-            if(PushFiles != null)
+            try
             {
-
-                // Reset Logger
-                logger2.Text = "";
-
-                // Add Firewall Rule
-                ProcessStartInfo procStartInfo = new ProcessStartInfo("netsh", "/c advfirewall firewall add rule name=\"CTRVFILESERVER\" dir=in action=allow protocol=TCP localport=8080");
-                procStartInfo.UseShellExecute = false;
-                procStartInfo.CreateNoWindow = true;
-                Process.Start(procStartInfo);
-
-                PushButton.Enabled = false;
-                PushFileSelectButton.Enabled = false;
-
-                log("Pushing files...", "logger2");
-
-                ss = new SimpleHTTPServer(ActiveDir, 8080);
-
-                System.Threading.Thread.Sleep(100);
-
-                try
+                
+                if (PushFiles != null)
                 {
+                    
+                    log("Connecting to '" + Settings.Default.IPAddress + "'...", "logger2", "Starting HTTPServer...");
+                    ss = new MyServer(8080, ActiveDir);
+                    ss.Start();
+                    
+                    System.Threading.Thread.Sleep(100);
+
+                    log("Connecting to '" + Settings.Default.IPAddress + "'...", "logger2", "Opening Socket...");
                     s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                    s.Connect(Settings.Default.IPAddress, 5000);
+                    IAsyncResult result = s.BeginConnect(Settings.Default.IPAddress, 5000, null, null);
+                    result.AsyncWaitHandle.WaitOne(5000, true);
+
+                    if (!s.Connected)
+                    {
+                        s.Close();
+                        ss.Stop();
+                        log("Failed!\n- Make sure FBI is open and you are in 'Network Install' -> 'Receive URLs over the network',\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then).", "logger2", "Failed to connect!");
+                        return;
+                    }
+                    else
+                    {
+
+                        logger2.Text = "Pushing...\n";
+                        foreach (var file in PushFiles) { logger2.Text += Path.GetFileName(file) + "\n"; }
+                        log("false", "logger2", "Sending file-list...");
+
+                        string b = "";
+                        foreach (var file in PushFiles) { b += NetUtil.IPv4.Local + ":8080/" + Uri.EscapeUriString(Path.GetFileName(file)) + "\n"; }
+                        byte[] Largo = BitConverter.GetBytes((uint)Encoding.ASCII.GetBytes(b).Length);
+                        byte[] Adress = Encoding.ASCII.GetBytes(b);
+                        Array.Reverse(Largo); //Endian fix
+                        byte[] outputBytes = new byte[Largo.Length + Adress.Length];
+                        Buffer.BlockCopy(Largo, 0, outputBytes, 0, Largo.Length);
+                        Buffer.BlockCopy(Adress, 0, outputBytes, Largo.Length, Adress.Length);
+                        s.Send(outputBytes);
+                        
+                        log("false", "logger2", "Pushing files...");
+                        s.BeginReceive(new byte[1], 0, 1, 0, new AsyncCallback(onPushed), null);
+
+                    }
+
                 }
-                catch (Exception)
+                else
                 {
-                    log("Failed to Connect!\n- Make sure you have FBI 2.4.5 or higher and in 'Receive URLs over the network' menu,\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network.", "logger2");
-                    PushButton.Enabled = true;
-                    PushFileSelectButton.Enabled = true;
+                    MessageBox.Show("Please add some files to Queue using the + button before trying to push.");
                 }
-
-                string bstring = "";
-                string localhost = "";
-
-                // Get LocalHost;
-                var host = Dns.GetHostEntry(Dns.GetHostName());
-                foreach (var ip in host.AddressList) { if (ip.AddressFamily == AddressFamily.InterNetwork) { localhost = ip.ToString() + ":8080/"; } }
-
-                // Add each file to the Byte String
-                foreach (var CIA in PushFiles) { bstring += localhost + Path.GetFileName(CIA) + "\n"; }
-
-                // Encoding
-                byte[] Largo = BitConverter.GetBytes((uint)Encoding.ASCII.GetBytes(bstring).Length);
-                byte[] Adress = Encoding.ASCII.GetBytes(bstring);
-                Array.Reverse(Largo); //Endian fix
-                byte[] outputBytes = new byte[Largo.Length + Adress.Length];
-                Buffer.BlockCopy(Largo, 0, outputBytes, 0, Largo.Length);
-                Buffer.BlockCopy(Adress, 0, outputBytes, Largo.Length, Adress.Length);
-
-                // Send
-                s.Send(outputBytes);
-                s.BeginReceive(new byte[1], 0, 1, 0, new AsyncCallback(onPushed), null); //Call me back when the 3ds says something.
-
-            } else
+                
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Please add some files to Queue using the + button before trying to push.");
+                MessageBox.Show("Something went really wrong: " + Environment.NewLine + Environment.NewLine + "\"" + ex.Message + "\"" + Environment.NewLine + Environment.NewLine + "If this keeps happening, please take a screenshot of this message and post it on github." + Environment.NewLine + Environment.NewLine + "The program will close now", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
             }
 
         }
@@ -754,24 +753,17 @@ namespace kit_kat
         #region onPushed
         private void onPushed(IAsyncResult ar)
         {
-
             Invoke((MethodInvoker)delegate
             {
                 PushButton.Enabled = true;
                 PushFileSelectButton.Enabled = true;
-                log("Pushed files", "logger3");
+                log("false", "logger2", "Successfully Pushed Files!");
             });
-
-            // Remove Firewall Rule
-            ProcessStartInfo procStartInfo = new ProcessStartInfo("netsh", "advfirewall firewall delete rule name=\"BOOPFILESERVER\"");
-            procStartInfo.UseShellExecute = false;
-            procStartInfo.CreateNoWindow = true;
-            Process.Start(procStartInfo);
-
+            
             s.Close();
             ss.Stop();
         }
         #endregion
-
+        
     }
 }

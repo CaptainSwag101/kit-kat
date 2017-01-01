@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,10 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CsHTTPRequest.cs" />
+    <Compile Include="Classes\CsHTTPServer.cs" />
     <Compile Include="Classes\InputRedirection.cs" />
+    <Compile Include="Classes\MyServer.cs" />
     <Compile Include="Classes\NetUtil.cs" />
     <Compile Include="Classes\NTR.cs" />
-    <Compile Include="Classes\SimpleHTTPServer.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
