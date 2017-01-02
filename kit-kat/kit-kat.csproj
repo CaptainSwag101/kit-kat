@@ -62,10 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CsHTTPRequest.cs" />
-    <Compile Include="Classes\CsHTTPServer.cs" />
+    <Compile Include="Classes\httpserver.cs" />
     <Compile Include="Classes\InputRedirection.cs" />
-    <Compile Include="Classes\MyServer.cs" />
     <Compile Include="Classes\NetUtil.cs" />
     <Compile Include="Classes\NTR.cs" />
     <Compile Include="MainForm.cs">

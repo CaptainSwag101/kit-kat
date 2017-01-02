@@ -1,5 +1,5 @@
 ﻿using kit_kat.Properties;
-using kit_kat.server;
+using kit_kat.httpserver;
 using ntrbase;
 using System;
 using System.Diagnostics;
@@ -182,7 +182,7 @@ namespace kit_kat
         // Variables
         public bool mempatch = false;
         Socket s;
-        sHTTPServer ss;
+        sRequest ss;
         string[] PushFiles;
         string ActiveDir;
         
@@ -474,7 +474,7 @@ namespace kit_kat
                 {
                     
                     log("Connecting to '" + Settings.Default.IPAddress + "'...", "logger2", "Starting HTTPServer...");
-                    ss = new MyServer(8080, ActiveDir);
+                    ss = new httpserver.httpserver(8080, ActiveDir);
                     ss.Start();
                     
                     System.Threading.Thread.Sleep(100);
