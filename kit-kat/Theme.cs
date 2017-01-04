@@ -853,28 +853,32 @@ namespace kit_kat
                 if ((string)TabPages[i].Tag != "Hidden")
                 {
 
-                    // Get the Tab's Rectangle Sizing;
+                    // Get the Tab's Rectangle Sizing
                     Rect = GetTabRect(i);
                     float x = Convert.ToSingle((Rect.X + (Rect.Height - 10)) - (Rect.Height / 2));
                     float y = Convert.ToSingle((Rect.Y + (Rect.Height - 10)) - (Rect.Height / 2));
                     
-                    // If the user is hovering over the tab;
+                    // If the user is hovering over the tab
                     if (!(OverIndex == -1))
                     {
-                        //Set the Selected Indicator to the Highlight Color;
-                        G.FillRectangle(new SolidBrush(Color.FromArgb(40, Settings.Default.HighlightColor)), new Rectangle(GetTabRect(OverIndex).X, GetTabRect(OverIndex).Y, 3, GetTabRect(OverIndex).Height));
+                        //Draw the Hover Background;
+                        G.FillRectangle(new SolidBrush(Color.FromArgb(9, Color.Black)), new Rectangle(GetTabRect(OverIndex).X, GetTabRect(OverIndex).Y, GetTabRect(OverIndex).Width, GetTabRect(OverIndex).Height));
                     }
-                    if (!(SelectedIndex == i))
+                    else
                     {
-                        //Set the Background Color to the Darkened Parent's Color;
-                        G.FillRectangle(new SolidBrush(DarkParentColor), new Rectangle(Rect.X, Rect.Y, Rect.Width + 7, Rect.Height));
+                        // Set the Background Color to the Darkened Parent's Color
+                        G.FillRectangle(new SolidBrush(DarkParentColor), new Rectangle(Rect.X, Rect.Y, Rect.Width + 6, Rect.Height));
                     }
-                    else if (SelectedIndex == i)
+
+                    // If its the selected tab
+                    if (SelectedIndex == i)
                     {
-                        //Set the Selected Indicator to the Highlight Color;
-                        G.FillRectangle(new SolidBrush(Settings.Default.HighlightColor), new Rectangle(Rect.X, Rect.Y, 3, Rect.Height));
+                        // Set the Selected Indicator to the Highlight Color
+                        G.FillRectangle(new SolidBrush(Settings.Default.HighlightColor), new Rectangle(Rect.X, Rect.Y, 2, Rect.Height));
+                        //Draw the Hover Background;
+                        G.FillRectangle(new SolidBrush(Color.FromArgb(30, Color.Black)), new Rectangle(Rect.X, Rect.Y, Rect.Width, Rect.Height));
                     }
-                    
+
                     if ((!ReferenceEquals(Tag, "TextOnly")))
                     {
                         if (!(SelectedIndex == i))

@@ -261,8 +261,7 @@ namespace ntrbase
                 if(Stream == true)
                 {
                     log("Make sure your using Boot NTR Selector and loading 3.4\n- Wi-Fi Adapter and Router might not be getting a strong enough connection,\n- IP Address could be incorrect (It changes every now and then),\n- 3DS and PC might not be connected to the same Network,\n- 3DS might not ACTUALLY be connected to the Internet\n(Some games disable Wi-Fi when you are in it to allow NFC - Pokemon, Zelda e.t.c).", "logger", "Failed to connect!");
-                } else
-                {
+                } else {
                     log("Make sure you opened the Input Redirection CIA BEFORE Boot NTR Selector.", "irlog");
                 }
             }
@@ -425,7 +424,7 @@ namespace ntrbase
         public async Task<bool> waitNTRwrite(uint address, uint data, int pid)
         {
             byte[] command = BitConverter.GetBytes(data);
-            Program.ntrClient.sendWriteMemPacket(address, (uint)pid, command);
+            Program.viewer.sendWriteMemPacket(address, (uint)pid, command);
             int waittimeout;
             for (waittimeout = 0; waittimeout < 10 * 10; waittimeout++)
             {

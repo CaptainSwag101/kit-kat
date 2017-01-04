@@ -22,8 +22,8 @@ namespace kit_kat
             // Log handling
             delLog = new LogDelegate(log);
 
-            Program.ntrClient.InfoReady += getGame;
-            Program.ntrClient.Connected += onConnect;
+            Program.viewer.InfoReady += getGame;
+            Program.viewer.Connected += onConnect;
 
             InitializeComponent();
 
@@ -210,7 +210,7 @@ namespace kit_kat
             #endregion
 
             // If Auto-Connect is enabled
-            if (Settings.Default.AutoConnect == true) { mempatch = false; connect(Settings.Default.IPAddress, 8000); Program.ntrClient.sendEmptyPacket(5); }
+            if (Settings.Default.AutoConnect == true) { mempatch = false; connect(Settings.Default.IPAddress, 8000); Program.viewer.sendEmptyPacket(5); }
 
         }
         #endregion
@@ -326,7 +326,7 @@ namespace kit_kat
         private void DisconnectTimeout_Tick(object sender, EventArgs e)
         {
             DisconnectTimeout.Enabled = false;
-            Program.ntrClient.disconnect();
+            Program.viewer.disconnect();
             ConnectButton.Text = "CONNECT";
             DisconnectTimeout.Stop();
         }
@@ -389,7 +389,7 @@ namespace kit_kat
         {
             try
             {
-                Program.ntrClient.sendHeartbeatPacket();
+                Program.viewer.sendHeartbeatPacket();
             }
             catch (Exception)
             {
@@ -449,7 +449,7 @@ namespace kit_kat
         #region ConnectButton
         private void ConnectButton_Click(object sender, EventArgs e)
         {
-            if (ConnectButton.Text == "CONNECT") { mempatch = false; connect(Settings.Default.IPAddress, 8000); Program.ntrClient.sendEmptyPacket(5); } else { Program.ntrClient.disconnect(); }
+            if (ConnectButton.Text == "CONNECT") { mempatch = false; connect(Settings.Default.IPAddress, 8000); Program.viewer.sendEmptyPacket(5); } else { Program.viewer.disconnect(); }
         }
         #endregion
         #region MemPatchButton
@@ -614,11 +614,11 @@ namespace kit_kat
             {
                 log("Writing Sun/Moon NFC Patch...", "logger");
                 int pid = Convert.ToInt32("0x" + args.info.Substring(args.info.IndexOf(", pname: niji_loc") - 8, args.info.Length - args.info.IndexOf(", pname: niji_loc")).Substring(0, 8), 16);
-                Task<bool> Patch = Program.ntrClient.waitNTRwrite(0x3DFFD0, 0xE3A01000, pid);
+                Task<bool> Patch = Program.viewer.waitNTRwrite(0x3DFFD0, 0xE3A01000, pid);
                 if (!(await Patch))
                     Console.WriteLine("[ERROR: An error has ocurred while applying the connection patch.]");
                 log("[Written Sun/Moon NFC Patch!]", "logger");
-                Program.ntrClient.disconnect();
+                Program.viewer.disconnect();
             }
             else
             {
@@ -637,8 +637,8 @@ namespace kit_kat
                 if (closeNTR == true) { foreach (Process p in Process.GetProcessesByName("NTRViewer")) { p.Kill(); p.WaitForExit(); } }
 
                 // Connect to Server
-                Program.ntrClient.setServer(host, port);
-                Program.ntrClient.connectToServer();
+                Program.viewer.setServer(host, port);
+                Program.viewer.connectToServer();
             }
         }
         #endregion
@@ -653,14 +653,14 @@ namespace kit_kat
             {
 
                 byte[] bytes = { 0x70, 0x47 };
-                Program.ntrClient.sendWriteMemPacket(0x0105AE4, 0x1a, bytes);
+                Program.viewer.sendWriteMemPacket(0x0105AE4, 0x1a, bytes);
 
             }
             else
             {
 
                 // Activate Remote Play
-                Program.ntrClient.sendEmptyPacket(901, (uint)Settings.Default.ScreenPriority << 8 | (uint)Settings.Default.PriorityFactor, (uint)Settings.Default.Quality, (uint)(Settings.Default.QOSValue * 1024 * 1024 / 8));
+                Program.viewer.sendEmptyPacket(901, (uint)Settings.Default.ScreenPriority << 8 | (uint)Settings.Default.PriorityFactor, (uint)Settings.Default.Quality, (uint)(Settings.Default.QOSValue * 1024 * 1024 / 8));
                 log("RemotePlay Activated", "logger");
 
                 // Start Disconnect Timeout

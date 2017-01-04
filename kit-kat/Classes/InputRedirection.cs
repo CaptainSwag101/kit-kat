@@ -119,7 +119,7 @@ namespace InputRedirection
             if (gameTime.TotalGameTime.TotalSeconds != seconds)
             {
                 seconds = (uint)gameTime.TotalGameTime.TotalSeconds;
-                Program.ntrClient.sendHeartbeatPacket();
+                Program.ir.sendHeartbeatPacket();
             }
 
             switch (Mode)
@@ -212,7 +212,7 @@ namespace InputRedirection
 
         protected override void OnExiting(Object sender, EventArgs args)
         {
-            Program.ntrClient.disconnect();
+            Program.ir.disconnect();
         }
 
         private void ReadConfig()
@@ -265,14 +265,14 @@ namespace InputRedirection
 
         private void CheckConnection()
         {
-            if (!Program.ntrClient.isConnected)
+            if (!Program.ir.isConnected)
             {
                 if(IPAddress != "3DS IP Address")
                 {
                     try
                     {
-                        Program.ntrClient.setServer(IPAddress, 8000);
-                        Program.ntrClient.connectToServer(false);
+                        Program.ir.setServer(IPAddress, 8000);
+                        Program.ir.connectToServer(false);
                         log("", "logger3", "Successfully connected...");
                     }
                     catch (Exception)
@@ -734,7 +734,7 @@ namespace InputRedirection
                                         Mode = 0;
                                         IPAddress = ipAddress.ToString();
                                         SaveConfig();
-                                        Program.ntrClient.disconnect();
+                                        Program.ir.disconnect();
                                     }
                                 }
                                 break;
@@ -1179,9 +1179,9 @@ namespace InputRedirection
                 data[0x0B] = (byte)((oldcpad >> 0x18) & 0xFF);
 
                 CheckConnection();
-                if (Program.ntrClient.isConnected)
+                if (Program.ir.isConnected)
                 {
-                    Program.ntrClient.sendWriteMemPacket(0x10DF20, (uint)0x10, data);
+                    Program.ir.sendWriteMemPacket(0x10DF20, (uint)0x10, data);
                 }
             }
         }

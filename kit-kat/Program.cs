@@ -9,7 +9,8 @@ namespace kit_kat
 {
     static class Program
     {
-        public static NTR ntrClient;
+        public static NTR viewer;
+        public static NTR ir;
         public static MainForm mainform;
 
         /// <summary>
@@ -19,7 +20,8 @@ namespace kit_kat
         static void Main()
         {
 
-            ntrClient = new NTR();
+            viewer = new NTR();
+            ir = new NTR();
 
             // Check for settings update;
             if (Settings.Default.UpgradeRequired)

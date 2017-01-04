@@ -85,7 +85,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.separator2 = new kit_kat.Separator();
             this.ViewMode = new System.Windows.Forms.NumericUpDown();
-            this.ipaddress = new System.Windows.Forms.TextBox();
             this.ScreenPriority = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -97,6 +96,8 @@
             this.PriorityFactor = new System.Windows.Forms.NumericUpDown();
             this.Quality = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ipaddress = new System.Windows.Forms.TextBox();
             this.customTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -114,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.QOSValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PriorityFactor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Quality)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // DisconnectTimeout
@@ -296,13 +298,13 @@
             this.materialButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton1.Font = new System.Drawing.Font("Segoe UI Symbol", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton1.ForeColor = System.Drawing.Color.White;
-            this.materialButton1.Location = new System.Drawing.Point(617, 6);
+            this.materialButton1.Location = new System.Drawing.Point(493, 6);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(0);
             this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(31, 31);
+            this.materialButton1.Size = new System.Drawing.Size(154, 31);
             this.materialButton1.TabIndex = 8;
             this.materialButton1.Tag = "";
-            this.materialButton1.Text = "?";
+            this.materialButton1.Text = "Tutorial";
             this.materialButton1.UseVisualStyleBackColor = false;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
@@ -432,13 +434,13 @@
             this.materialButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialButton2.Font = new System.Drawing.Font("Segoe UI Symbol", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialButton2.ForeColor = System.Drawing.Color.White;
-            this.materialButton2.Location = new System.Drawing.Point(617, 6);
+            this.materialButton2.Location = new System.Drawing.Point(493, 6);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(0);
             this.materialButton2.Name = "materialButton2";
-            this.materialButton2.Size = new System.Drawing.Size(31, 31);
+            this.materialButton2.Size = new System.Drawing.Size(154, 31);
             this.materialButton2.TabIndex = 8;
             this.materialButton2.Tag = "";
-            this.materialButton2.Text = "?";
+            this.materialButton2.Text = "Tutorial";
             this.materialButton2.UseVisualStyleBackColor = false;
             this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
@@ -641,7 +643,6 @@
             this.tabPage8.Controls.Add(this.label8);
             this.tabPage8.Controls.Add(this.separator2);
             this.tabPage8.Controls.Add(this.ViewMode);
-            this.tabPage8.Controls.Add(this.ipaddress);
             this.tabPage8.Controls.Add(this.ScreenPriority);
             this.tabPage8.Controls.Add(this.label2);
             this.tabPage8.Controls.Add(this.label7);
@@ -653,6 +654,7 @@
             this.tabPage8.Controls.Add(this.PriorityFactor);
             this.tabPage8.Controls.Add(this.Quality);
             this.tabPage8.Controls.Add(this.label9);
+            this.tabPage8.Controls.Add(this.panel4);
             this.tabPage8.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
             this.tabPage8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tabPage8.Location = new System.Drawing.Point(38, 2);
@@ -786,17 +788,6 @@
             0,
             0});
             this.ViewMode.ValueChanged += new System.EventHandler(this.ViewMode_ValueChanged);
-            // 
-            // ipaddress
-            // 
-            this.ipaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ipaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ipaddress.Location = new System.Drawing.Point(6, 12);
-            this.ipaddress.Name = "ipaddress";
-            this.ipaddress.Size = new System.Drawing.Size(499, 19);
-            this.ipaddress.TabIndex = 3;
-            this.ipaddress.Text = "3DS IP Address";
-            this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
             // 
             // ScreenPriority
             // 
@@ -944,6 +935,26 @@
             this.label9.TabIndex = 26;
             this.label9.Text = "Auto-Connect on Launch";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.ipaddress);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(505, 34);
+            this.panel4.TabIndex = 34;
+            // 
+            // ipaddress
+            // 
+            this.ipaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ipaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ipaddress.Location = new System.Drawing.Point(5, 7);
+            this.ipaddress.Name = "ipaddress";
+            this.ipaddress.Size = new System.Drawing.Size(497, 19);
+            this.ipaddress.TabIndex = 3;
+            this.ipaddress.Text = "3DS IP Address";
+            this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -984,6 +995,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.QOSValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PriorityFactor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Quality)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1056,6 +1069,7 @@
         private CustomLabel status3;
         private Separator separator4;
         private MaterialButton materialButton5;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 
