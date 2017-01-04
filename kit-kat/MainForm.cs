@@ -26,13 +26,7 @@ namespace kit_kat
             Program.viewer.Connected += onConnect;
 
             InitializeComponent();
-
-            if (NetUtil.IPv4.GetFirst3DS().ToString() != "")
-            {
-                Settings.Default.IPAddress = NetUtil.IPv4.GetFirst3DS().ToString();
-                Settings.Default.Save();
-                ipaddress.Text = Settings.Default.IPAddress;
-            }
+            
             UpdateIP();
 
         }
@@ -430,18 +424,18 @@ namespace kit_kat
         #region IPDetector Handling
         private void IPDetecter_Tick(object sender, EventArgs e)
         {
-            if (NetUtil.IPv4.GetFirst3DS().ToString() != "")
-            {
-                Settings.Default.IPAddress = NetUtil.IPv4.GetFirst3DS().ToString();
-                Settings.Default.Save();
-                ipaddress.Text = Settings.Default.IPAddress;
-            }
             if (ValidateIP(Settings.Default.IPAddress) == true)
             {
                 IPDetecter.Stop();
                 IPDetecter.Enabled = false;
             }
-            UpdateIP();
+            else if (NetUtil.IPv4.GetFirst3DS().ToString() != "")
+            {
+                Settings.Default.IPAddress = NetUtil.IPv4.GetFirst3DS().ToString();
+                Settings.Default.Save();
+                ipaddress.Text = Settings.Default.IPAddress;
+                UpdateIP();
+            }
         }
         #endregion
 
