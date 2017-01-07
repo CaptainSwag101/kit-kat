@@ -34,10 +34,13 @@
             this.TabFixer = new System.Windows.Forms.Panel();
             this.Heartbeat = new System.Windows.Forms.Timer(this.components);
             this.IPDetecter = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ipaddress = new System.Windows.Forms.TextBox();
             this.controlBox1 = new kit_kat.ControlBox();
+            this.BatchLinkButton = new kit_kat.MaterialButton();
             this.customLabel1 = new kit_kat.CustomLabel();
             this.customTabControl1 = new kit_kat.cTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.CaptureCard = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.customLabel7 = new kit_kat.CustomLabel();
             this.logger = new kit_kat.CustomLabel();
@@ -47,7 +50,7 @@
             this.MemPatchButton = new kit_kat.MaterialButton();
             this.ConnectButton = new kit_kat.MaterialButton();
             this.materialButton1 = new kit_kat.MaterialButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Push = new System.Windows.Forms.TabPage();
             this.customLabel2 = new kit_kat.CustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.customLabel6 = new kit_kat.CustomLabel();
@@ -58,15 +61,14 @@
             this.separator1 = new kit_kat.Separator();
             this.PushButton = new kit_kat.MaterialButton();
             this.materialButton2 = new kit_kat.MaterialButton();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.IR = new System.Windows.Forms.TabPage();
             this.customLabel3 = new kit_kat.CustomLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.status3panel = new System.Windows.Forms.Panel();
             this.customLabel5 = new kit_kat.CustomLabel();
             this.pctSurface = new System.Windows.Forms.PictureBox();
             this.customLabel8 = new kit_kat.CustomLabel();
             this.customLabel4 = new kit_kat.CustomLabel();
-            this.status3panel = new System.Windows.Forms.Panel();
-            this.status3 = new kit_kat.CustomLabel();
             this.separator4 = new kit_kat.Separator();
             this.materialButton5 = new kit_kat.MaterialButton();
             this.Hidden4 = new System.Windows.Forms.TabPage();
@@ -74,48 +76,56 @@
             this.Hidden6 = new System.Windows.Forms.TabPage();
             this.Hidden7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.ShowConsole = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tScale = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.bScale = new System.Windows.Forms.TextBox();
-            this.AutoConnect = new System.Windows.Forms.CheckBox();
-            this.separator3 = new kit_kat.Separator();
-            this.BatchLinkButton = new kit_kat.MaterialButton();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cTabControl1 = new kit_kat.cTabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.separator2 = new kit_kat.Separator();
-            this.ViewMode = new System.Windows.Forms.NumericUpDown();
-            this.ScreenPriority = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.QOSValue = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.PriorityFactor = new System.Windows.Forms.NumericUpDown();
-            this.Quality = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.ipaddress = new System.Windows.Forms.TextBox();
+            this.ShowConsole = new System.Windows.Forms.CheckBox();
+            this.Quality = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PriorityFactor = new System.Windows.Forms.NumericUpDown();
+            this.tScale = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bScale = new System.Windows.Forms.TextBox();
+            this.QOSValue = new System.Windows.Forms.NumericUpDown();
+            this.AutoConnect = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ViewMode = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ScreenPriority = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.customLabel9 = new kit_kat.CustomLabel();
+            this.customLabel10 = new kit_kat.CustomLabel();
+            this.panel4.SuspendLayout();
             this.customTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.CaptureCard.SuspendLayout();
             this.panel1.SuspendLayout();
             this.status1panel.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.Push.SuspendLayout();
             this.panel2.SuspendLayout();
             this.status2panel.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.IR.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
-            this.status3panel.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.cTabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Quality)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PriorityFactor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QOSValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewMode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScreenPriority)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QOSValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PriorityFactor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Quality)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // DisconnectTimeout
@@ -141,6 +151,26 @@
             this.IPDetecter.Enabled = true;
             this.IPDetecter.Tick += new System.EventHandler(this.IPDetecter_Tick);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.ipaddress);
+            this.panel4.Location = new System.Drawing.Point(36, 282);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(552, 35);
+            this.panel4.TabIndex = 36;
+            // 
+            // ipaddress
+            // 
+            this.ipaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ipaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ipaddress.Location = new System.Drawing.Point(5, 8);
+            this.ipaddress.Name = "ipaddress";
+            this.ipaddress.Size = new System.Drawing.Size(546, 19);
+            this.ipaddress.TabIndex = 3;
+            this.ipaddress.Text = "3DS IP Address";
+            this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
+            // 
             // controlBox1
             // 
             this.controlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -150,6 +180,19 @@
             this.controlBox1.Size = new System.Drawing.Size(68, 29);
             this.controlBox1.TabIndex = 18;
             this.controlBox1.Text = "controlBox1";
+            // 
+            // BatchLinkButton
+            // 
+            this.BatchLinkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.BatchLinkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BatchLinkButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BatchLinkButton.ForeColor = System.Drawing.Color.White;
+            this.BatchLinkButton.Location = new System.Drawing.Point(588, 282);
+            this.BatchLinkButton.Name = "BatchLinkButton";
+            this.BatchLinkButton.Size = new System.Drawing.Size(102, 35);
+            this.BatchLinkButton.TabIndex = 35;
+            this.BatchLinkButton.Text = "LINK .bat";
+            this.BatchLinkButton.UseVisualStyleBackColor = false;
             // 
             // customLabel1
             // 
@@ -165,9 +208,9 @@
             // customTabControl1
             // 
             this.customTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.customTabControl1.Controls.Add(this.tabPage1);
-            this.customTabControl1.Controls.Add(this.tabPage2);
-            this.customTabControl1.Controls.Add(this.tabPage3);
+            this.customTabControl1.Controls.Add(this.CaptureCard);
+            this.customTabControl1.Controls.Add(this.Push);
+            this.customTabControl1.Controls.Add(this.IR);
             this.customTabControl1.Controls.Add(this.Hidden4);
             this.customTabControl1.Controls.Add(this.Hidden5);
             this.customTabControl1.Controls.Add(this.Hidden6);
@@ -185,18 +228,18 @@
             this.customTabControl1.TabStop = false;
             this.customTabControl1.SelectedIndexChanged += new System.EventHandler(this.customTabControl1_SelectedIndexChanged);
             // 
-            // tabPage1
+            // CaptureCard
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
-            this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPage1.Location = new System.Drawing.Point(38, 2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(654, 291);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.CaptureCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.CaptureCard.Controls.Add(this.panel1);
+            this.CaptureCard.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.CaptureCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CaptureCard.Location = new System.Drawing.Point(38, 2);
+            this.CaptureCard.Name = "CaptureCard";
+            this.CaptureCard.Padding = new System.Windows.Forms.Padding(3);
+            this.CaptureCard.Size = new System.Drawing.Size(654, 291);
+            this.CaptureCard.TabIndex = 0;
+            this.CaptureCard.Text = "tabPage1";
             // 
             // panel1
             // 
@@ -210,7 +253,7 @@
             this.panel1.Controls.Add(this.materialButton1);
             this.panel1.Location = new System.Drawing.Point(0, 19);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 253);
+            this.panel1.Size = new System.Drawing.Size(654, 215);
             this.panel1.TabIndex = 7;
             // 
             // customLabel7
@@ -230,7 +273,7 @@
             this.logger.ForeColor = System.Drawing.Color.Black;
             this.logger.Location = new System.Drawing.Point(0, 46);
             this.logger.Name = "logger";
-            this.logger.Size = new System.Drawing.Size(654, 181);
+            this.logger.Size = new System.Drawing.Size(654, 142);
             this.logger.TabIndex = 6;
             this.logger.Text = "Loading IP Address...";
             // 
@@ -238,7 +281,7 @@
             // 
             this.status1panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
             this.status1panel.Controls.Add(this.status1);
-            this.status1panel.Location = new System.Drawing.Point(0, 227);
+            this.status1panel.Location = new System.Drawing.Point(0, 189);
             this.status1panel.Name = "status1panel";
             this.status1panel.Size = new System.Drawing.Size(654, 26);
             this.status1panel.TabIndex = 7;
@@ -308,20 +351,20 @@
             this.materialButton1.UseVisualStyleBackColor = false;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // tabPage2
+            // Push
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.tabPage2.Controls.Add(this.customLabel2);
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
-            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPage2.Location = new System.Drawing.Point(38, 2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(654, 291);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Tag = "";
-            this.tabPage2.Text = "tabPage2";
+            this.Push.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.Push.Controls.Add(this.customLabel2);
+            this.Push.Controls.Add(this.panel2);
+            this.Push.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.Push.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Push.Location = new System.Drawing.Point(38, 2);
+            this.Push.Name = "Push";
+            this.Push.Padding = new System.Windows.Forms.Padding(3);
+            this.Push.Size = new System.Drawing.Size(654, 291);
+            this.Push.TabIndex = 2;
+            this.Push.Tag = "";
+            this.Push.Text = "tabPage2";
             // 
             // customLabel2
             // 
@@ -345,7 +388,7 @@
             this.panel2.Controls.Add(this.materialButton2);
             this.panel2.Location = new System.Drawing.Point(0, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(654, 253);
+            this.panel2.Size = new System.Drawing.Size(654, 215);
             this.panel2.TabIndex = 13;
             // 
             // customLabel6
@@ -365,7 +408,7 @@
             this.logger2.ForeColor = System.Drawing.Color.Black;
             this.logger2.Location = new System.Drawing.Point(0, 46);
             this.logger2.Name = "logger2";
-            this.logger2.Size = new System.Drawing.Size(654, 181);
+            this.logger2.Size = new System.Drawing.Size(654, 143);
             this.logger2.TabIndex = 9;
             this.logger2.Text = "Loading IP Address...";
             // 
@@ -389,7 +432,7 @@
             // 
             this.status2panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
             this.status2panel.Controls.Add(this.status2);
-            this.status2panel.Location = new System.Drawing.Point(0, 227);
+            this.status2panel.Location = new System.Drawing.Point(0, 189);
             this.status2panel.Name = "status2panel";
             this.status2panel.Size = new System.Drawing.Size(654, 26);
             this.status2panel.TabIndex = 7;
@@ -444,20 +487,20 @@
             this.materialButton2.UseVisualStyleBackColor = false;
             this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
-            // tabPage3
+            // IR
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.tabPage3.Controls.Add(this.customLabel3);
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
-            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPage3.Location = new System.Drawing.Point(38, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(654, 291);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Tag = "";
-            this.tabPage3.Text = "tabPage3";
+            this.IR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.IR.Controls.Add(this.customLabel3);
+            this.IR.Controls.Add(this.panel3);
+            this.IR.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.IR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.IR.Location = new System.Drawing.Point(38, 2);
+            this.IR.Name = "IR";
+            this.IR.Padding = new System.Windows.Forms.Padding(3);
+            this.IR.Size = new System.Drawing.Size(654, 291);
+            this.IR.TabIndex = 3;
+            this.IR.Tag = "";
+            this.IR.Text = "tabPage3";
             // 
             // customLabel3
             // 
@@ -472,17 +515,25 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.status3panel);
             this.panel3.Controls.Add(this.customLabel5);
             this.panel3.Controls.Add(this.pctSurface);
             this.panel3.Controls.Add(this.customLabel8);
             this.panel3.Controls.Add(this.customLabel4);
-            this.panel3.Controls.Add(this.status3panel);
             this.panel3.Controls.Add(this.separator4);
             this.panel3.Controls.Add(this.materialButton5);
-            this.panel3.Location = new System.Drawing.Point(0, 12);
+            this.panel3.Location = new System.Drawing.Point(0, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(654, 265);
+            this.panel3.Size = new System.Drawing.Size(654, 244);
             this.panel3.TabIndex = 27;
+            // 
+            // status3panel
+            // 
+            this.status3panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
+            this.status3panel.Location = new System.Drawing.Point(0, 240);
+            this.status3panel.Name = "status3panel";
+            this.status3panel.Size = new System.Drawing.Size(654, 4);
+            this.status3panel.TabIndex = 7;
             // 
             // customLabel5
             // 
@@ -534,26 +585,6 @@
     "it using FBI.";
             this.customLabel4.Click += new System.EventHandler(this.customLabel4_Click);
             // 
-            // status3panel
-            // 
-            this.status3panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.status3panel.Controls.Add(this.status3);
-            this.status3panel.Location = new System.Drawing.Point(0, 240);
-            this.status3panel.Name = "status3panel";
-            this.status3panel.Size = new System.Drawing.Size(654, 26);
-            this.status3panel.TabIndex = 7;
-            // 
-            // status3
-            // 
-            this.status3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.status3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.status3.ForeColor = System.Drawing.Color.White;
-            this.status3.Location = new System.Drawing.Point(20, 0);
-            this.status3.Name = "status3";
-            this.status3.Size = new System.Drawing.Size(614, 26);
-            this.status3.TabIndex = 23;
-            this.status3.Text = "Waiting for input...";
-            // 
             // separator4
             // 
             this.separator4.Location = new System.Drawing.Point(0, 44);
@@ -585,11 +616,10 @@
             this.Hidden4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Hidden4.Location = new System.Drawing.Point(38, 2);
             this.Hidden4.Name = "Hidden4";
-            this.Hidden4.Padding = new System.Windows.Forms.Padding(3);
             this.Hidden4.Size = new System.Drawing.Size(654, 291);
-            this.Hidden4.TabIndex = 4;
+            this.Hidden4.TabIndex = 9;
             this.Hidden4.Tag = "Hidden";
-            this.Hidden4.Text = "tabPage5";
+            this.Hidden4.Text = "Hidden4";
             // 
             // Hidden5
             // 
@@ -632,29 +662,7 @@
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
-            this.tabPage8.Controls.Add(this.ShowConsole);
-            this.tabPage8.Controls.Add(this.label1);
-            this.tabPage8.Controls.Add(this.tScale);
-            this.tabPage8.Controls.Add(this.label10);
-            this.tabPage8.Controls.Add(this.bScale);
-            this.tabPage8.Controls.Add(this.AutoConnect);
-            this.tabPage8.Controls.Add(this.separator3);
-            this.tabPage8.Controls.Add(this.BatchLinkButton);
-            this.tabPage8.Controls.Add(this.label8);
-            this.tabPage8.Controls.Add(this.separator2);
-            this.tabPage8.Controls.Add(this.ViewMode);
-            this.tabPage8.Controls.Add(this.ScreenPriority);
-            this.tabPage8.Controls.Add(this.label2);
-            this.tabPage8.Controls.Add(this.label7);
-            this.tabPage8.Controls.Add(this.label4);
-            this.tabPage8.Controls.Add(this.label3);
-            this.tabPage8.Controls.Add(this.QOSValue);
-            this.tabPage8.Controls.Add(this.label5);
-            this.tabPage8.Controls.Add(this.label6);
-            this.tabPage8.Controls.Add(this.PriorityFactor);
-            this.tabPage8.Controls.Add(this.Quality);
-            this.tabPage8.Controls.Add(this.label9);
-            this.tabPage8.Controls.Add(this.panel4);
+            this.tabPage8.Controls.Add(this.panel5);
             this.tabPage8.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
             this.tabPage8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tabPage8.Location = new System.Drawing.Point(38, 2);
@@ -665,251 +673,104 @@
             this.tabPage8.Tag = "";
             this.tabPage8.Text = "tabPage8";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(98)))), ((int)(((byte)(114)))));
+            this.panel5.Controls.Add(this.cTabControl1);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(654, 288);
+            this.panel5.TabIndex = 1;
+            // 
+            // cTabControl1
+            // 
+            this.cTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.cTabControl1.Controls.Add(this.tabPage2);
+            this.cTabControl1.Controls.Add(this.tabPage1);
+            this.cTabControl1.Controls.Add(this.tabPage3);
+            this.cTabControl1.ItemSize = new System.Drawing.Size(36, 127);
+            this.cTabControl1.Location = new System.Drawing.Point(-2, -2);
+            this.cTabControl1.Multiline = true;
+            this.cTabControl1.Name = "cTabControl1";
+            this.cTabControl1.SelectedIndex = 0;
+            this.cTabControl1.Size = new System.Drawing.Size(656, 290);
+            this.cTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.cTabControl1.TabIndex = 0;
+            this.cTabControl1.Tag = "TextOnly";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tabPage2.Controls.Add(this.panel6);
+            this.tabPage2.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage2.Location = new System.Drawing.Point(127, 2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(529, 288);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Viewer";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.separator2);
+            this.panel6.Controls.Add(this.label9);
+            this.panel6.Controls.Add(this.ShowConsole);
+            this.panel6.Controls.Add(this.Quality);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.PriorityFactor);
+            this.panel6.Controls.Add(this.tScale);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.bScale);
+            this.panel6.Controls.Add(this.QOSValue);
+            this.panel6.Controls.Add(this.AutoConnect);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.ViewMode);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.ScreenPriority);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Location = new System.Drawing.Point(0, 8);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(529, 238);
+            this.panel6.TabIndex = 77;
+            // 
+            // separator2
+            // 
+            this.separator2.Location = new System.Drawing.Point(13, 130);
+            this.separator2.Name = "separator2";
+            this.separator2.Size = new System.Drawing.Size(508, 6);
+            this.separator2.TabIndex = 77;
+            this.separator2.Text = "separator2";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(10, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(145, 17);
+            this.label9.TabIndex = 70;
+            this.label9.Text = "Auto-Connect on Launch";
+            // 
             // ShowConsole
             // 
             this.ShowConsole.AutoSize = true;
             this.ShowConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.ShowConsole.Location = new System.Drawing.Point(633, 176);
+            this.ShowConsole.Location = new System.Drawing.Point(508, 140);
             this.ShowConsole.Name = "ShowConsole";
             this.ShowConsole.Size = new System.Drawing.Size(15, 14);
-            this.ShowConsole.TabIndex = 33;
+            this.ShowConsole.TabIndex = 76;
             this.ShowConsole.UseVisualStyleBackColor = true;
-            this.ShowConsole.CheckedChanged += new System.EventHandler(this.ShowConsole_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 17);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Show NTRViewer Console";
-            // 
-            // tScale
-            // 
-            this.tScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tScale.Location = new System.Drawing.Point(598, 71);
-            this.tScale.Name = "tScale";
-            this.tScale.Size = new System.Drawing.Size(48, 21);
-            this.tScale.TabIndex = 31;
-            this.tScale.Text = "1.0";
-            this.tScale.TextChanged += new System.EventHandler(this.tScale_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(7, 74);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 17);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Top Screen Scale (0 = Disabled)";
-            // 
-            // bScale
-            // 
-            this.bScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bScale.Location = new System.Drawing.Point(598, 95);
-            this.bScale.Name = "bScale";
-            this.bScale.Size = new System.Drawing.Size(48, 21);
-            this.bScale.TabIndex = 29;
-            this.bScale.Text = "1.0";
-            this.bScale.TextChanged += new System.EventHandler(this.bScale_TextChanged);
-            // 
-            // AutoConnect
-            // 
-            this.AutoConnect.AutoSize = true;
-            this.AutoConnect.Location = new System.Drawing.Point(633, 51);
-            this.AutoConnect.Name = "AutoConnect";
-            this.AutoConnect.Size = new System.Drawing.Size(15, 14);
-            this.AutoConnect.TabIndex = 27;
-            this.AutoConnect.UseVisualStyleBackColor = true;
-            this.AutoConnect.CheckedChanged += new System.EventHandler(this.AutoConnect_CheckedChanged);
-            // 
-            // separator3
-            // 
-            this.separator3.BackColor = System.Drawing.Color.Gainsboro;
-            this.separator3.Location = new System.Drawing.Point(6, 268);
-            this.separator3.Name = "separator3";
-            this.separator3.Size = new System.Drawing.Size(642, 6);
-            this.separator3.TabIndex = 20;
-            this.separator3.Text = "separator3";
-            // 
-            // BatchLinkButton
-            // 
-            this.BatchLinkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.BatchLinkButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BatchLinkButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BatchLinkButton.ForeColor = System.Drawing.Color.White;
-            this.BatchLinkButton.Location = new System.Drawing.Point(511, 3);
-            this.BatchLinkButton.Name = "BatchLinkButton";
-            this.BatchLinkButton.Size = new System.Drawing.Size(140, 34);
-            this.BatchLinkButton.TabIndex = 24;
-            this.BatchLinkButton.Text = "LINK .bat";
-            this.BatchLinkButton.UseVisualStyleBackColor = false;
-            this.BatchLinkButton.Click += new System.EventHandler(this.BatchLinkButton_Click);
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 7F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(118)))), ((int)(((byte)(138)))));
-            this.label8.Location = new System.Drawing.Point(8, 268);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(640, 20);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Created by PRAGMA";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // separator2
-            // 
-            this.separator2.BackColor = System.Drawing.Color.Gainsboro;
-            this.separator2.Location = new System.Drawing.Point(6, 168);
-            this.separator2.Name = "separator2";
-            this.separator2.Size = new System.Drawing.Size(642, 6);
-            this.separator2.TabIndex = 19;
-            this.separator2.Text = "separator2";
-            // 
-            // ViewMode
-            // 
-            this.ViewMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.ViewMode.Location = new System.Drawing.Point(598, 119);
-            this.ViewMode.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ViewMode.Name = "ViewMode";
-            this.ViewMode.Size = new System.Drawing.Size(48, 21);
-            this.ViewMode.TabIndex = 9;
-            this.ViewMode.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ViewMode.ValueChanged += new System.EventHandler(this.ViewMode_ValueChanged);
-            // 
-            // ScreenPriority
-            // 
-            this.ScreenPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.ScreenPriority.Location = new System.Drawing.Point(598, 243);
-            this.ScreenPriority.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ScreenPriority.Name = "ScreenPriority";
-            this.ScreenPriority.Size = new System.Drawing.Size(48, 21);
-            this.ScreenPriority.TabIndex = 15;
-            this.ScreenPriority.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ScreenPriority.ValueChanged += new System.EventHandler(this.ScreenPriority_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(7, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Bottom Screen Scale (0 = Disabled)";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(7, 145);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 17);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Quality";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(6, 197);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Priority Factor";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(7, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "View Mode (1 = Vertical, 0 = Horizontal)";
-            // 
-            // QOSValue
-            // 
-            this.QOSValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.QOSValue.Location = new System.Drawing.Point(598, 219);
-            this.QOSValue.Maximum = new decimal(new int[] {
-            101,
-            0,
-            0,
-            0});
-            this.QOSValue.Name = "QOSValue";
-            this.QOSValue.Size = new System.Drawing.Size(48, 21);
-            this.QOSValue.TabIndex = 14;
-            this.QOSValue.Value = new decimal(new int[] {
-            101,
-            0,
-            0,
-            0});
-            this.QOSValue.ValueChanged += new System.EventHandler(this.QOSValue_ValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(6, 221);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 17);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Quality of Service Value";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(7, 245);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(214, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Screen Priority (1 = Top, 0 = Bottom)";
-            // 
-            // PriorityFactor
-            // 
-            this.PriorityFactor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.PriorityFactor.Location = new System.Drawing.Point(598, 195);
-            this.PriorityFactor.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.PriorityFactor.Name = "PriorityFactor";
-            this.PriorityFactor.Size = new System.Drawing.Size(48, 21);
-            this.PriorityFactor.TabIndex = 13;
-            this.PriorityFactor.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.PriorityFactor.ValueChanged += new System.EventHandler(this.PriorityFactor_ValueChanged);
             // 
             // Quality
             // 
             this.Quality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.Quality.Location = new System.Drawing.Point(598, 143);
+            this.Quality.Location = new System.Drawing.Point(473, 103);
             this.Quality.Minimum = new decimal(new int[] {
             1,
             0,
@@ -917,43 +778,238 @@
             0});
             this.Quality.Name = "Quality";
             this.Quality.Size = new System.Drawing.Size(48, 21);
-            this.Quality.TabIndex = 17;
+            this.Quality.TabIndex = 68;
             this.Quality.Value = new decimal(new int[] {
             90,
             0,
             0,
             0});
-            this.Quality.ValueChanged += new System.EventHandler(this.Quality_ValueChanged);
             // 
-            // label9
+            // label1
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(7, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 17);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Auto-Connect on Launch";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(10, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 17);
+            this.label1.TabIndex = 75;
+            this.label1.Text = "Show NTRViewer Console";
             // 
-            // panel4
+            // PriorityFactor
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.ipaddress);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(505, 34);
-            this.panel4.TabIndex = 34;
+            this.PriorityFactor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.PriorityFactor.Location = new System.Drawing.Point(473, 160);
+            this.PriorityFactor.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.PriorityFactor.Name = "PriorityFactor";
+            this.PriorityFactor.Size = new System.Drawing.Size(48, 21);
+            this.PriorityFactor.TabIndex = 64;
+            this.PriorityFactor.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
-            // ipaddress
+            // tScale
             // 
-            this.ipaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ipaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ipaddress.Location = new System.Drawing.Point(5, 7);
-            this.ipaddress.Name = "ipaddress";
-            this.ipaddress.Size = new System.Drawing.Size(497, 19);
-            this.ipaddress.TabIndex = 3;
-            this.ipaddress.Text = "3DS IP Address";
-            this.ipaddress.TextChanged += new System.EventHandler(this.ipaddress_TextChanged);
+            this.tScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tScale.Location = new System.Drawing.Point(473, 30);
+            this.tScale.Name = "tScale";
+            this.tScale.Size = new System.Drawing.Size(48, 21);
+            this.tScale.TabIndex = 74;
+            this.tScale.Text = "1.0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(10, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(214, 17);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Screen Priority (1 = Top, 0 = Bottom)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(10, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(183, 17);
+            this.label10.TabIndex = 73;
+            this.label10.Text = "Top Screen Scale (0 = Disabled)";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(9, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 17);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Quality of Service Value";
+            // 
+            // bScale
+            // 
+            this.bScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.bScale.Location = new System.Drawing.Point(473, 54);
+            this.bScale.Name = "bScale";
+            this.bScale.Size = new System.Drawing.Size(48, 21);
+            this.bScale.TabIndex = 72;
+            this.bScale.Text = "1.0";
+            // 
+            // QOSValue
+            // 
+            this.QOSValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.QOSValue.Location = new System.Drawing.Point(473, 184);
+            this.QOSValue.Maximum = new decimal(new int[] {
+            101,
+            0,
+            0,
+            0});
+            this.QOSValue.Name = "QOSValue";
+            this.QOSValue.Size = new System.Drawing.Size(48, 21);
+            this.QOSValue.TabIndex = 65;
+            this.QOSValue.Value = new decimal(new int[] {
+            101,
+            0,
+            0,
+            0});
+            // 
+            // AutoConnect
+            // 
+            this.AutoConnect.AutoSize = true;
+            this.AutoConnect.Location = new System.Drawing.Point(508, 11);
+            this.AutoConnect.Name = "AutoConnect";
+            this.AutoConnect.Size = new System.Drawing.Size(15, 14);
+            this.AutoConnect.TabIndex = 71;
+            this.AutoConnect.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(10, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(231, 17);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "View Mode (1 = Vertical, 0 = Horizontal)";
+            // 
+            // ViewMode
+            // 
+            this.ViewMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.ViewMode.Location = new System.Drawing.Point(473, 79);
+            this.ViewMode.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ViewMode.Name = "ViewMode";
+            this.ViewMode.Size = new System.Drawing.Size(48, 21);
+            this.ViewMode.TabIndex = 60;
+            this.ViewMode.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(9, 163);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Priority Factor";
+            // 
+            // ScreenPriority
+            // 
+            this.ScreenPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.ScreenPriority.Location = new System.Drawing.Point(473, 208);
+            this.ScreenPriority.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ScreenPriority.Name = "ScreenPriority";
+            this.ScreenPriority.Size = new System.Drawing.Size(48, 21);
+            this.ScreenPriority.TabIndex = 66;
+            this.ScreenPriority.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(10, 106);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 17);
+            this.label7.TabIndex = 67;
+            this.label7.Text = "Quality";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(10, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 17);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Bottom Screen Scale (0 = Disabled)";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tabPage1.Controls.Add(this.customLabel9);
+            this.tabPage1.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage1.Location = new System.Drawing.Point(127, 2);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(529, 288);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Push";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tabPage3.Controls.Add(this.customLabel10);
+            this.tabPage3.Font = new System.Drawing.Font("Kozuka Gothic Pro B", 9F);
+            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage3.Location = new System.Drawing.Point(127, 2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(529, 288);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "Input Redirecter";
+            // 
+            // customLabel9
+            // 
+            this.customLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel9.ForeColor = System.Drawing.Color.Silver;
+            this.customLabel9.Location = new System.Drawing.Point(0, 0);
+            this.customLabel9.Name = "customLabel9";
+            this.customLabel9.Size = new System.Drawing.Size(529, 253);
+            this.customLabel9.TabIndex = 37;
+            this.customLabel9.Text = "No configurable settings...";
+            this.customLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customLabel10
+            // 
+            this.customLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel10.ForeColor = System.Drawing.Color.Silver;
+            this.customLabel10.Location = new System.Drawing.Point(0, 0);
+            this.customLabel10.Name = "customLabel10";
+            this.customLabel10.Size = new System.Drawing.Size(529, 253);
+            this.customLabel10.TabIndex = 38;
+            this.customLabel10.Text = "No configurable settings...";
+            this.customLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -962,6 +1018,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(118)))), ((int)(((byte)(138)))));
             this.ClientSize = new System.Drawing.Size(690, 317);
             this.Controls.Add(this.controlBox1);
+            this.Controls.Add(this.BatchLinkButton);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.customLabel1);
             this.Controls.Add(this.TabFixer);
             this.Controls.Add(this.customTabControl1);
@@ -977,99 +1035,109 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDrag);
-            this.customTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.status1panel.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.status2panel.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).EndInit();
-            this.status3panel.ResumeLayout(false);
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewMode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ScreenPriority)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QOSValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PriorityFactor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Quality)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.customTabControl1.ResumeLayout(false);
+            this.CaptureCard.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.status1panel.ResumeLayout(false);
+            this.Push.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.status2panel.ResumeLayout(false);
+            this.IR.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.cTabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Quality)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PriorityFactor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QOSValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewMode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScreenPriority)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox ipaddress;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown ViewMode;
         private System.Windows.Forms.Timer DisconnectTimeout;
+        private ControlBox controlBox1;
+        private System.Windows.Forms.Panel TabFixer;
+        private System.Windows.Forms.Timer Heartbeat;
+        private CustomLabel customLabel1;
+        private System.Windows.Forms.Timer IPDetecter;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Panel panel5;
+        private cTabControl cTabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox ShowConsole;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tScale;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox bScale;
+        private System.Windows.Forms.CheckBox AutoConnect;
+        private System.Windows.Forms.NumericUpDown ViewMode;
+        private System.Windows.Forms.NumericUpDown ScreenPriority;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown QOSValue;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown PriorityFactor;
-        private System.Windows.Forms.NumericUpDown QOSValue;
-        private System.Windows.Forms.NumericUpDown ScreenPriority;
         private System.Windows.Forms.NumericUpDown Quality;
-        private System.Windows.Forms.Label label7;
-        private ControlBox controlBox1;
-        private cTabControl customTabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel TabFixer;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage Hidden4;
-        private System.Windows.Forms.TabPage Hidden5;
-        private System.Windows.Forms.TabPage Hidden6;
-        private System.Windows.Forms.TabPage tabPage8;
-        private MaterialButton ConnectButton;
-        private MaterialButton MemPatchButton;
-        private Separator separator2;
-        public System.Windows.Forms.Label label8;
-        private Separator separator3;
-        private MaterialButton BatchLinkButton;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox AutoConnect;
-        private System.Windows.Forms.Timer Heartbeat;
-        private System.Windows.Forms.TextBox bScale;
-        private System.Windows.Forms.TextBox tScale;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox ShowConsole;
-        private System.Windows.Forms.Label label1;
-        private CustomLabel customLabel1;
-        private CustomLabel logger;
-        private CustomLabel logger2;
-        private MaterialButton PushButton;
-        private MaterialButton PushFileSelectButton;
-        private CustomLabel customLabel2;
-        public System.Windows.Forms.PictureBox pctSurface;
-        private CustomLabel customLabel3;
-        private CustomLabel customLabel5;
-        private CustomLabel customLabel4;
-        private System.Windows.Forms.Timer IPDetecter;
-        private System.Windows.Forms.Panel panel1;
-        private Separator separator5;
-        private CustomLabel status1;
-        private System.Windows.Forms.Panel status1panel;
-        private MaterialButton materialButton1;
-        private CustomLabel customLabel7;
         private System.Windows.Forms.TabPage Hidden7;
+        private System.Windows.Forms.TabPage Hidden6;
+        private System.Windows.Forms.TabPage Hidden5;
+        private System.Windows.Forms.TabPage IR;
+        private CustomLabel customLabel3;
+        private System.Windows.Forms.Panel panel3;
+        private CustomLabel customLabel5;
+        public System.Windows.Forms.PictureBox pctSurface;
+        private CustomLabel customLabel8;
+        private CustomLabel customLabel4;
+        private System.Windows.Forms.Panel status3panel;
+        private Separator separator4;
+        private MaterialButton materialButton5;
+        private System.Windows.Forms.TabPage Push;
+        private CustomLabel customLabel2;
         private System.Windows.Forms.Panel panel2;
         private CustomLabel customLabel6;
+        private CustomLabel logger2;
+        private MaterialButton PushFileSelectButton;
         private System.Windows.Forms.Panel status2panel;
         private CustomLabel status2;
         private Separator separator1;
+        private MaterialButton PushButton;
         private MaterialButton materialButton2;
-        private System.Windows.Forms.Panel panel3;
-        private CustomLabel customLabel8;
-        private System.Windows.Forms.Panel status3panel;
-        private CustomLabel status3;
-        private Separator separator4;
-        private MaterialButton materialButton5;
+        private System.Windows.Forms.TabPage CaptureCard;
+        private System.Windows.Forms.Panel panel1;
+        private CustomLabel customLabel7;
+        private CustomLabel logger;
+        private System.Windows.Forms.Panel status1panel;
+        private CustomLabel status1;
+        private Separator separator5;
+        private MaterialButton MemPatchButton;
+        private MaterialButton ConnectButton;
+        private MaterialButton materialButton1;
+        private MaterialButton BatchLinkButton;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox ipaddress;
+        private cTabControl customTabControl1;
+        private System.Windows.Forms.TabPage Hidden4;
+        private System.Windows.Forms.Panel panel6;
+        private Separator separator2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private CustomLabel customLabel9;
+        private CustomLabel customLabel10;
     }
 }
 

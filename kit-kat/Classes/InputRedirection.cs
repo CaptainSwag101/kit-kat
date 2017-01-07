@@ -273,7 +273,6 @@ namespace InputRedirection
                     {
                         Program.ir.setServer(IPAddress, 8000);
                         Program.ir.connectToServer(false);
-                        log("", "logger3", "Successfully connected...");
                     }
                     catch (Exception)
                     {

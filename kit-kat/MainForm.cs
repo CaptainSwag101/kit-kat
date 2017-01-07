@@ -224,20 +224,8 @@ namespace kit_kat
             File.Delete(Path.Combine(Path.GetTempPath(), "SDL2.dll"));
             File.Delete(Path.Combine(Path.GetTempPath(), "turbojpeg.dll"));
             #endregion
-            #region Stop HostedNetwork
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.Start();
-            cmd.StandardInput.WriteLine("netsh wlan stop hostednetwork");
-            cmd.StandardInput.Flush();
-            cmd.StandardInput.Close();
-            cmd.WaitForExit();
-            #endregion
-
+            s.Close();
+            ss.Stop();
         }
         #endregion
         #region Update Settings
@@ -320,6 +308,7 @@ namespace kit_kat
         private void DisconnectTimeout_Tick(object sender, EventArgs e)
         {
             DisconnectTimeout.Enabled = false;
+            Program.ir.disconnect();
             Program.viewer.disconnect();
             ConnectButton.Text = "CONNECT";
             DisconnectTimeout.Stop();
@@ -371,7 +360,6 @@ namespace kit_kat
                         if (s.Contains("Failed")) { status3panel.BackColor = Settings.Default.AlertColor; }
                         else if (s.Contains("Success")) { status3panel.BackColor = Color.LightGreen; }
                         else { status3panel.BackColor = Color.FromArgb(90, 184, 255); }
-                        status3.Text = s;
                     }
                 }
             }));
@@ -410,7 +398,6 @@ namespace kit_kat
             else
             {
                 IsUsingMouse = false;
-                status3.Text = "send nudes to @DarkenedMatter ( ͡° ͜ʖ ͡°)";
             }
         }
         
@@ -625,7 +612,7 @@ namespace kit_kat
         {
             if (ValidateIP(host) == true)
             {
-                log("", "logger", "Trying to connect...");
+                log("If you are stuck here with a blank NTRViewer screen\nTry disabling Firewall and/or Anti-Virus's (even Windows Defender).\nThis is a common issue where NTRViewer is being denied from receiving packets but can send them.", "logger", "Trying to connect...");
 
                 // Shut down NTRViewer
                 if (closeNTR == true) { foreach (Process p in Process.GetProcessesByName("NTRViewer")) { p.Kill(); p.WaitForExit(); } }
@@ -758,6 +745,6 @@ namespace kit_kat
             ss.Stop();
         }
         #endregion
-        
+
     }
 }

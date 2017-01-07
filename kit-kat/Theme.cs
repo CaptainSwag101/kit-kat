@@ -828,7 +828,7 @@ namespace kit_kat
 
             //Set the Graphics Variable;
             Graphics G = e.Graphics;
-            
+
             //Raise the Paint event;
             base.OnPaint(e);
 
@@ -878,6 +878,9 @@ namespace kit_kat
                         //Draw the Hover Background;
                         G.FillRectangle(new SolidBrush(Color.FromArgb(30, Color.Black)), new Rectangle(Rect.X, Rect.Y, Rect.Width, Rect.Height));
                     }
+                    
+                    //Set Render Quality;
+                    G.TextRenderingHint = TextRenderingHint.AntiAlias;
 
                     if ((!ReferenceEquals(Tag, "TextOnly")))
                     {
@@ -903,7 +906,7 @@ namespace kit_kat
                         dynamic TabProperties = TabPages[i];
                         StringFormat sf = new StringFormat();
                         sf.LineAlignment = StringAlignment.Center;
-                        G.DrawString(TabProperties.Text, TabProperties.Font, new SolidBrush(TabProperties.ForeColor), x + 2, Convert.ToSingle(Rect.Y + (Rect.Height / 2)), sf);
+                        G.DrawString(TabProperties.Text, new Font(LoadFont(Resources.Roboto_Medium), 10f), new SolidBrush(TabProperties.ForeColor), x + 2, Convert.ToSingle(Rect.Y + (Rect.Height / 2)), sf);
                     }
                     
                 }
