@@ -224,8 +224,7 @@ namespace kit_kat
             File.Delete(Path.Combine(Path.GetTempPath(), "SDL2.dll"));
             File.Delete(Path.Combine(Path.GetTempPath(), "turbojpeg.dll"));
             #endregion
-            s.Close();
-            ss.Stop();
+
         }
         #endregion
         #region Update Settings
