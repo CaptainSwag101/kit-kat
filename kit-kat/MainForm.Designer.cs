@@ -45,7 +45,6 @@
             this.customLabel7 = new kit_kat.CustomLabel();
             this.logger = new kit_kat.CustomLabel();
             this.status1panel = new System.Windows.Forms.Panel();
-            this.status1 = new kit_kat.CustomLabel();
             this.separator5 = new kit_kat.Separator();
             this.MemPatchButton = new kit_kat.MaterialButton();
             this.ConnectButton = new kit_kat.MaterialButton();
@@ -57,7 +56,6 @@
             this.logger2 = new kit_kat.CustomLabel();
             this.PushFileSelectButton = new kit_kat.MaterialButton();
             this.status2panel = new System.Windows.Forms.Panel();
-            this.status2 = new kit_kat.CustomLabel();
             this.separator1 = new kit_kat.Separator();
             this.PushButton = new kit_kat.MaterialButton();
             this.materialButton2 = new kit_kat.MaterialButton();
@@ -107,10 +105,8 @@
             this.customTabControl1.SuspendLayout();
             this.CaptureCard.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.status1panel.SuspendLayout();
             this.Push.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.status2panel.SuspendLayout();
             this.IR.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).BeginInit();
@@ -274,29 +270,18 @@
             this.logger.ForeColor = System.Drawing.Color.Black;
             this.logger.Location = new System.Drawing.Point(0, 46);
             this.logger.Name = "logger";
-            this.logger.Size = new System.Drawing.Size(654, 142);
+            this.logger.Size = new System.Drawing.Size(654, 165);
             this.logger.TabIndex = 6;
             this.logger.Text = "Loading IP Address...";
             // 
             // status1panel
             // 
             this.status1panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.status1panel.Controls.Add(this.status1);
-            this.status1panel.Location = new System.Drawing.Point(0, 189);
+            this.status1panel.Location = new System.Drawing.Point(0, 211);
+            this.status1panel.Margin = new System.Windows.Forms.Padding(0);
             this.status1panel.Name = "status1panel";
-            this.status1panel.Size = new System.Drawing.Size(654, 26);
+            this.status1panel.Size = new System.Drawing.Size(654, 4);
             this.status1panel.TabIndex = 7;
-            // 
-            // status1
-            // 
-            this.status1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.status1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.status1.ForeColor = System.Drawing.Color.White;
-            this.status1.Location = new System.Drawing.Point(20, 0);
-            this.status1.Name = "status1";
-            this.status1.Size = new System.Drawing.Size(614, 26);
-            this.status1.TabIndex = 23;
-            this.status1.Text = "Idle...";
             // 
             // separator5
             // 
@@ -409,7 +394,7 @@
             this.logger2.ForeColor = System.Drawing.Color.Black;
             this.logger2.Location = new System.Drawing.Point(0, 46);
             this.logger2.Name = "logger2";
-            this.logger2.Size = new System.Drawing.Size(654, 143);
+            this.logger2.Size = new System.Drawing.Size(654, 165);
             this.logger2.TabIndex = 9;
             this.logger2.Text = "Loading IP Address...";
             // 
@@ -432,22 +417,11 @@
             // status2panel
             // 
             this.status2panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.status2panel.Controls.Add(this.status2);
-            this.status2panel.Location = new System.Drawing.Point(0, 189);
+            this.status2panel.Location = new System.Drawing.Point(0, 211);
+            this.status2panel.Margin = new System.Windows.Forms.Padding(0);
             this.status2panel.Name = "status2panel";
-            this.status2panel.Size = new System.Drawing.Size(654, 26);
+            this.status2panel.Size = new System.Drawing.Size(654, 4);
             this.status2panel.TabIndex = 7;
-            // 
-            // status2
-            // 
-            this.status2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.status2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.status2.ForeColor = System.Drawing.Color.White;
-            this.status2.Location = new System.Drawing.Point(20, 0);
-            this.status2.Name = "status2";
-            this.status2.Size = new System.Drawing.Size(614, 26);
-            this.status2.TabIndex = 23;
-            this.status2.Text = "Waiting for files to be queued...";
             // 
             // separator1
             // 
@@ -1050,10 +1024,8 @@
             this.customTabControl1.ResumeLayout(false);
             this.CaptureCard.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.status1panel.ResumeLayout(false);
             this.Push.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.status2panel.ResumeLayout(false);
             this.IR.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctSurface)).EndInit();
@@ -1123,7 +1095,6 @@
         private CustomLabel logger2;
         private MaterialButton PushFileSelectButton;
         private System.Windows.Forms.Panel status2panel;
-        private CustomLabel status2;
         private Separator separator1;
         private MaterialButton PushButton;
         private MaterialButton materialButton2;
@@ -1132,7 +1103,6 @@
         private CustomLabel customLabel7;
         private CustomLabel logger;
         private System.Windows.Forms.Panel status1panel;
-        private CustomLabel status1;
         private Separator separator5;
         private MaterialButton MemPatchButton;
         private MaterialButton ConnectButton;

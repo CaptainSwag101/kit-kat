@@ -345,14 +345,12 @@ namespace kit_kat
                         if (s.Contains("Failed")) { status1panel.BackColor = Settings.Default.AlertColor; }
                         else if (s.Contains("Success")) { status1panel.BackColor = Color.LightGreen; }
                         else { status1panel.BackColor = Color.FromArgb(90, 184, 255); }
-                        status1.Text = s;
                     }
                     else if (c == "logger2")
                     {
                         if (s.Contains("Failed")) { status2panel.BackColor = Settings.Default.AlertColor; }
                         else if (s.Contains("Success")) { status2panel.BackColor = Color.LightGreen; }
                         else { status2panel.BackColor = Color.FromArgb(90, 184, 255); }
-                        status2.Text = s;
                     }
                     else if (c == "logger3")
                     {
@@ -611,7 +609,7 @@ namespace kit_kat
         {
             if (ValidateIP(host) == true)
             {
-                log("If you are stuck here with a blank NTRViewer screen\nTry disabling Firewall and/or Anti-Virus's (even Windows Defender).\nThis is a common issue where NTRViewer is being denied from receiving packets but can send them.", "logger", "Trying to connect...");
+                log("Trying to connect...", "logger");
 
                 // Shut down NTRViewer
                 if (closeNTR == true) { foreach (Process p in Process.GetProcessesByName("NTRViewer")) { p.Kill(); p.WaitForExit(); } }
@@ -641,7 +639,6 @@ namespace kit_kat
 
                 // Activate Remote Play
                 Program.viewer.sendEmptyPacket(901, (uint)Settings.Default.ScreenPriority << 8 | (uint)Settings.Default.PriorityFactor, (uint)Settings.Default.Quality, (uint)(Settings.Default.QOSValue * 1024 * 1024 / 8));
-                log("RemotePlay Activated", "logger");
 
                 // Start Disconnect Timeout
                 DisconnectTimeout.Enabled = true;
@@ -668,17 +665,16 @@ namespace kit_kat
                         }
 
                         Process.Start(p);
-                        log("NTRViewer Started", "logger");
+                        log("Successfully Connected...\n\nWhitescreen? Disable Firewall and any Anti-Virus including Windows Defender.\nFirewall and Anti-Virus's are usually the cause of the White Screen of Death.", "logger", "Success");
                     }
                     catch (Exception err)
                     {
-                        log("[ERROR: " + err.Message + "]", "logger");
+                        log(err.Message, "logger", "Failed");
                     }
-
                 }
                 else
                 {
-                    log("[ERROR: NTRViewer failed to extract, try downloading and running NTRViewer manually as an Administrator.]", "logger");
+                    log("NTRViewer failed to extract, try downloading and running NTRViewer manually as an Administrator.", "logger");
                 }
                 #endregion
 

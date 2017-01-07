@@ -256,7 +256,7 @@ namespace ntrbase
             
             tcp = new TcpClient();
             tcp.NoDelay = true;
-            if (!tcp.ConnectAsync(host, port).Wait(1000))
+            if (!tcp.ConnectAsync(host, port).Wait(2000))
             {
                 if(Stream == true)
                 {
@@ -269,7 +269,6 @@ namespace ntrbase
             {
                 if(Stream == true)
                 {
-                    log("Connected to System");
                 } else
                 {
                     log("", "logger3", "Successfully connected...");
