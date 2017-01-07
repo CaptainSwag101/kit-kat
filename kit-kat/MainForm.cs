@@ -551,7 +551,7 @@ namespace kit_kat
             dg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             if (dg.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(dg.FileName);
+                MessageBox.Show("Linked " + dg.FileName);
                 Settings.Default["BatchFile"] = dg.FileName;
                 Settings.Default.Save();
             }
@@ -744,6 +744,5 @@ namespace kit_kat
             ss.Stop();
         }
         #endregion
-
     }
 }

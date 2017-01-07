@@ -100,8 +100,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.customLabel9 = new kit_kat.CustomLabel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.customLabel10 = new kit_kat.CustomLabel();
             this.panel4.SuspendLayout();
             this.customTabControl1.SuspendLayout();
@@ -193,6 +193,7 @@
             this.BatchLinkButton.TabIndex = 35;
             this.BatchLinkButton.Text = "LINK .bat";
             this.BatchLinkButton.UseVisualStyleBackColor = false;
+            this.BatchLinkButton.Click += new System.EventHandler(this.BatchLinkButton_Click);
             // 
             // customLabel1
             // 
@@ -766,6 +767,7 @@
             this.ShowConsole.Size = new System.Drawing.Size(15, 14);
             this.ShowConsole.TabIndex = 76;
             this.ShowConsole.UseVisualStyleBackColor = true;
+            this.ShowConsole.CheckedChanged += new System.EventHandler(this.ShowConsole_CheckedChanged);
             // 
             // Quality
             // 
@@ -784,6 +786,7 @@
             0,
             0,
             0});
+            this.Quality.ValueChanged += new System.EventHandler(this.Quality_ValueChanged);
             // 
             // label1
             // 
@@ -812,6 +815,7 @@
             0,
             0,
             0});
+            this.PriorityFactor.ValueChanged += new System.EventHandler(this.PriorityFactor_ValueChanged);
             // 
             // tScale
             // 
@@ -821,6 +825,7 @@
             this.tScale.Size = new System.Drawing.Size(48, 21);
             this.tScale.TabIndex = 74;
             this.tScale.Text = "1.0";
+            this.tScale.TextChanged += new System.EventHandler(this.tScale_TextChanged);
             // 
             // label6
             // 
@@ -860,6 +865,7 @@
             this.bScale.Size = new System.Drawing.Size(48, 21);
             this.bScale.TabIndex = 72;
             this.bScale.Text = "1.0";
+            this.bScale.TextChanged += new System.EventHandler(this.bScale_TextChanged);
             // 
             // QOSValue
             // 
@@ -878,6 +884,7 @@
             0,
             0,
             0});
+            this.QOSValue.ValueChanged += new System.EventHandler(this.QOSValue_ValueChanged);
             // 
             // AutoConnect
             // 
@@ -887,6 +894,7 @@
             this.AutoConnect.Size = new System.Drawing.Size(15, 14);
             this.AutoConnect.TabIndex = 71;
             this.AutoConnect.UseVisualStyleBackColor = true;
+            this.AutoConnect.CheckedChanged += new System.EventHandler(this.AutoConnect_CheckedChanged);
             // 
             // label3
             // 
@@ -915,6 +923,7 @@
             0,
             0,
             0});
+            this.ViewMode.ValueChanged += new System.EventHandler(this.ViewMode_ValueChanged);
             // 
             // label4
             // 
@@ -943,6 +952,7 @@
             0,
             0,
             0});
+            this.ScreenPriority.ValueChanged += new System.EventHandler(this.ScreenPriority_ValueChanged);
             // 
             // label7
             // 
@@ -977,6 +987,17 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Push";
             // 
+            // customLabel9
+            // 
+            this.customLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.customLabel9.ForeColor = System.Drawing.Color.Silver;
+            this.customLabel9.Location = new System.Drawing.Point(0, 0);
+            this.customLabel9.Name = "customLabel9";
+            this.customLabel9.Size = new System.Drawing.Size(529, 253);
+            this.customLabel9.TabIndex = 37;
+            this.customLabel9.Text = "No configurable settings...";
+            this.customLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
@@ -988,17 +1009,6 @@
             this.tabPage3.Size = new System.Drawing.Size(529, 288);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Input Redirecter";
-            // 
-            // customLabel9
-            // 
-            this.customLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.customLabel9.ForeColor = System.Drawing.Color.Silver;
-            this.customLabel9.Location = new System.Drawing.Point(0, 0);
-            this.customLabel9.Name = "customLabel9";
-            this.customLabel9.Size = new System.Drawing.Size(529, 253);
-            this.customLabel9.TabIndex = 37;
-            this.customLabel9.Text = "No configurable settings...";
-            this.customLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // customLabel10
             // 
