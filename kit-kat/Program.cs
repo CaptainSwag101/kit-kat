@@ -23,14 +23,6 @@ namespace kit_kat
             viewer = new NTR();
             ir = new NTR();
 
-            // Check for settings update;
-            if (Settings.Default.UpgradeRequired)
-            {
-                Settings.Default.Upgrade();
-                Settings.Default.UpgradeRequired = false;
-                Settings.Default.Save();
-            }
-
             #region Check for an Update
             //If the user is Connected to the Internet;
             if (TestInternetConnection())
@@ -118,9 +110,11 @@ namespace kit_kat
                 // Shut down NTRViewer
                 foreach (Process p in Process.GetProcessesByName("NTRViewer")) { p.Kill(); p.WaitForExit(); }
                 // Extract to Temp Directory
-                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "NTRViewer.exe"), Properties.Resources.NTRViewer);
-                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "SDL2.dll"), Properties.Resources.SDL2);
-                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "turbojpeg.dll"), Properties.Resources.turbojpeg);
+                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "NTRViewer.exe"), Resources.NTRViewer);
+                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "SDL2.dll"), Resources.SDL2);
+                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "turbojpeg.dll"), Resources.turbojpeg);
+                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "3dstool.exe"), Resources._3dstool);
+                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "ctrtool.exe"), Resources.ctrtool);
                 //Start
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

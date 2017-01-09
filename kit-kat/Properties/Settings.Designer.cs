@@ -121,7 +121,7 @@ namespace kit_kat.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("144, 202, 249")]
+        [global::System.Configuration.DefaultSettingValueAttribute("90, 184, 255")]
         public global::System.Drawing.Color HighlightColor {
             get {
                 return ((global::System.Drawing.Color)(this["HighlightColor"]));
@@ -157,7 +157,7 @@ namespace kit_kat.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
         public global::System.Drawing.Color FontColor {
             get {
                 return ((global::System.Drawing.Color)(this["FontColor"]));
@@ -230,18 +230,6 @@ namespace kit_kat.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UpgradeRequired {
-            get {
-                return ((bool)(this["UpgradeRequired"]));
-            }
-            set {
-                this["UpgradeRequired"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool IRDebug {
             get {
                 return ((bool)(this["IRDebug"]));
@@ -284,6 +272,42 @@ namespace kit_kat.Properties {
             }
             set {
                 this["IRGP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color TabBackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["TabBackgroundColor"]));
+            }
+            set {
+                this["TabBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color TitleColor {
+            get {
+                return ((global::System.Drawing.Color)(this["TitleColor"]));
+            }
+            set {
+                this["TitleColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
+        public global::System.Drawing.Color SeperatorColor {
+            get {
+                return ((global::System.Drawing.Color)(this["SeperatorColor"]));
+            }
+            set {
+                this["SeperatorColor"] = value;
             }
         }
     }

@@ -716,7 +716,7 @@ namespace kit_kat
 
         //Variables;
         private Graphics G;
-
+        
         //Default Properties;
         public CustomLabel()
         {
@@ -744,13 +744,17 @@ namespace kit_kat
                 StringFormat sf = new StringFormat();
                 sf.LineAlignment = StringAlignment.Center;
                 sf.Alignment = StringAlignment.Center;
-                G.DrawString(Text, new Font(LoadFont(Resources.Roboto_Medium), Font.Size), new SolidBrush(ForeColor), DisplayRectangle, sf);
+                Color Color = Color.White;
+                if (ReferenceEquals(Tag, "Overide")) { Color = ForeColor; } else { Color = Settings.Default.FontColor; }
+                G.DrawString(Text, new Font(LoadFont(Resources.Roboto_Medium), Font.Size), new SolidBrush(Color), DisplayRectangle, sf);
             } else
             {
                 StringFormat sf = new StringFormat();
                 sf.LineAlignment = StringAlignment.Near;
                 sf.Alignment = StringAlignment.Near;
-                G.DrawString(Text, new Font(LoadFont(Resources.Roboto_Medium), Font.Size), new SolidBrush(ForeColor), DisplayRectangle, sf);
+                Color Color = Color.White;
+                if (ReferenceEquals(Tag, "Overide")) { Color = ForeColor; } else { Color = Settings.Default.FontColor; }
+                G.DrawString(Text, new Font(LoadFont(Resources.Roboto_Medium), Font.Size), new SolidBrush(Color), DisplayRectangle, sf);
             }
 
         }
@@ -818,7 +822,7 @@ namespace kit_kat
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
-            e.Control.BackColor = ColorFromHex("#f1f4f9");
+            e.Control.BackColor = Settings.Default.TabBackgroundColor;
             e.Control.ForeColor = ColorFromHex("#FFFFFF");
             e.Control.Font = new Font("Kozuka Gothic Pro B", 9);
         }
@@ -976,7 +980,7 @@ namespace kit_kat
         {
             G = e.Graphics;
 
-            using (Pen Separator = new Pen(Color.FromArgb(240, 240, 240)))
+            using (Pen Separator = new Pen(Settings.Default.SeperatorColor))
             {
                 G.DrawLine(Separator, 0, 0, Width, 0);
             }

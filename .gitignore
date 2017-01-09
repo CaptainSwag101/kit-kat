@@ -22,6 +22,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 kit-kat.vshost.exe
+Rom-Kit/
 
 # Visual Studio 2015 cache/options directory
 .vs/

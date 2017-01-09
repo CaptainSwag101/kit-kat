@@ -26,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,10 +63,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ColorPicker\AdobeColors.cs" />
+    <Compile Include="Classes\ColorPicker\ctrl2DColorBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\ColorPicker\ctrlVerticalColorSlider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Classes\httpserver.cs" />
     <Compile Include="Classes\InputRedirection.cs" />
     <Compile Include="Classes\NetUtil.cs" />
     <Compile Include="Classes\NTR.cs" />
+    <Compile Include="ColorPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +86,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Theme.cs" />
+    <EmbeddedResource Include="Classes\ColorPicker\ctrl2DColorBox.resx">
+      <DependentUpon>ctrl2DColorBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\ColorPicker\ctrlVerticalColorSlider.resx">
+      <DependentUpon>ctrlVerticalColorSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorPicker.resx">
+      <DependentUpon>ColorPicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +130,8 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="ILMergeOrder.txt" />
+    <None Include="Resources\Applications\Rom-Kit\ctrtool.exe" />
+    <None Include="Resources\Applications\Rom-Kit\3dstool.exe" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Applications\NTRViewer\SDL2.dll" />
