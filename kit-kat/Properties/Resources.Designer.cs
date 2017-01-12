@@ -103,6 +103,16 @@ namespace kit_kat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] MakeRom {
+            get {
+                object obj = ResourceManager.GetObject("MakeRom", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] NTRViewer {
             get {
                 object obj = ResourceManager.GetObject("NTRViewer", resourceCulture);

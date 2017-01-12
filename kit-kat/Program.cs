@@ -115,6 +115,7 @@ namespace kit_kat
                 File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "turbojpeg.dll"), Resources.turbojpeg);
                 File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "3dstool.exe"), Resources._3dstool);
                 File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "ctrtool.exe"), Resources.ctrtool);
+                File.WriteAllBytes(Path.Combine(Path.GetTempPath(), "MakeRom.exe"), Resources.MakeRom);
                 //Start
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

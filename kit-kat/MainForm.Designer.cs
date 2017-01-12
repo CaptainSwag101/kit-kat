@@ -631,7 +631,7 @@
             this.RK_ExtractButton.Name = "RK_ExtractButton";
             this.RK_ExtractButton.Size = new System.Drawing.Size(318, 31);
             this.RK_ExtractButton.TabIndex = 7;
-            this.RK_ExtractButton.Text = "Extract (.cia and .3ds support)";
+            this.RK_ExtractButton.Text = "Extract";
             this.RK_ExtractButton.UseVisualStyleBackColor = false;
             this.RK_ExtractButton.Click += new System.EventHandler(this.materialButton4_Click);
             // 
@@ -657,7 +657,7 @@
             this.RK_RebuildButton.Name = "RK_RebuildButton";
             this.RK_RebuildButton.Size = new System.Drawing.Size(318, 31);
             this.RK_RebuildButton.TabIndex = 24;
-            this.RK_RebuildButton.Text = "Rebuild (.3ds support, .cia soon!)";
+            this.RK_RebuildButton.Text = "Rebuild";
             this.RK_RebuildButton.UseVisualStyleBackColor = false;
             this.RK_RebuildButton.Click += new System.EventHandler(this.materialButton1_Click_1);
             // 

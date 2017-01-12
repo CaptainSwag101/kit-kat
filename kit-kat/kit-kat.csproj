@@ -130,6 +130,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="ILMergeOrder.txt" />
+    <None Include="Resources\Applications\Rom-Kit\MakeRom.exe" />
     <None Include="Resources\Applications\Rom-Kit\ctrtool.exe" />
     <None Include="Resources\Applications\Rom-Kit\3dstool.exe" />
   </ItemGroup>
