@@ -607,7 +607,7 @@ namespace kit_kat
             {
                 log("Writing Sun/Moon NFC Patch...", "logger");
                 int pid = Convert.ToInt32("0x" + args.info.Substring(args.info.IndexOf(", pname: niji_loc") - 8, args.info.Length - args.info.IndexOf(", pname: niji_loc")).Substring(0, 8), 16);
-                Task<bool> Patch = Program.viewer.waitNTRwrite(0x3DFFD0, 0xE3A01000, pid);
+                Task<bool> Patch = Program.viewer.waitNTRwrite(0x3E14C0, 0xE3A01000, pid);
                 if (!(await Patch))
                     Console.WriteLine("[ERROR: An error has ocurred while applying the connection patch.]");
                 log("[Written Sun/Moon NFC Patch!]", "logger");
