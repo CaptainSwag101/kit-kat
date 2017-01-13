@@ -1190,16 +1190,17 @@ namespace kit_kat
             {
                 log("Writing Sun/Moon NFC Patch...", "logger");
                 int pid = Convert.ToInt32("0x" + args.info.Substring(args.info.IndexOf(", pname: niji_loc") - 8, args.info.Length - args.info.IndexOf(", pname: niji_loc")).Substring(0, 8), 16);
-                //v1.0
-                Task<bool> Patch = Program.viewer.waitNTRwrite(0x3E14C0, 0xE3A01000, pid);
-                if (!(await Patch))
-                    log("[ERROR: An error has ocurred while applying the connection patch.]");
-                //v1.1
-                Task<bool> Patch2 = Program.viewer.waitNTRwrite(0x3DFFD0, 0xE3A01000, pid);
-                if (!(await Patch2))
-                    log("[ERROR: An error has ocurred while applying the connection patch.]");
-                log("[Written Sun/Moon NFC Patch!]", "logger");
-                Program.viewer.disconnect();
+                
+                Task<bool>[] patches = new Task<bool>[2];
+                patches[0] = Program.viewer.waitNTRwrite(0x3DFFD0, 0xE3A01000, pid); //v1.0
+                patches[1] = Program.viewer.waitNTRwrite(0x3E14C0, 0xE3A01000, pid); //v1.1
+                
+                if (!(await Task.WhenAll(patches))[0] || !(await Task.WhenAll(patches))[1])
+                {
+                    log("Sun/Moon NFC patch written!");
+
+                    Program.viewer.disconnect();
+                }
             }
             else
             {
